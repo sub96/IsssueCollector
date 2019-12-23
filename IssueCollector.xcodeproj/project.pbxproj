@@ -14,6 +14,7 @@
 		91B7975823B0E6470038CE25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B7975723B0E6470038CE25 /* Assets.xcassets */; };
 		91B7975B23B0E6470038CE25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B7975A23B0E6470038CE25 /* Preview Assets.xcassets */; };
 		91B7975E23B0E6470038CE25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B7975C23B0E6470038CE25 /* LaunchScreen.storyboard */; };
+		91B7976423B0E7FD0038CE25 /* IssueCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7976323B0E7FD0038CE25 /* IssueCollector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		91B7975A23B0E6470038CE25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91B7975D23B0E6470038CE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91B7975F23B0E6470038CE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91B7976323B0E7FD0038CE25 /* IssueCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCollector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				91B7974323B0E6350038CE25 /* IssueCollector.h */,
 				91B7974423B0E6350038CE25 /* Info.plist */,
+				91B7976323B0E7FD0038CE25 /* IssueCollector.swift */,
 			);
 			path = IssueCollector;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				TargetAttributes = {
 					91B7973F23B0E6350038CE25 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					91B7974E23B0E6470038CE25 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -208,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B7976423B0E7FD0038CE25 /* IssueCollector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +363,7 @@
 		91B7974923B0E6350038CE25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 75SMYU6JAM;
@@ -374,6 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtt.IssueCollector;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -382,6 +389,7 @@
 		91B7974A23B0E6350038CE25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 75SMYU6JAM;
