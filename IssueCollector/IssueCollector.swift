@@ -10,14 +10,14 @@ import UIKit
 
 public final class IssueCollector {
     
-    static var shared = IssueCollector()
+    public static var shared = IssueCollector()
     
     deinit {
         print("Issue collector deinit")
          NotificationCenter.default.removeObserver(self)
     }
     
-    func startObserving() {
+    public func startObserving() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleScrenshoot),
                                                name: UIApplication.userDidTakeScreenshotNotification,
