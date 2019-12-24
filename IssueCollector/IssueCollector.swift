@@ -14,25 +14,23 @@ public final class IssueCollector {
     
     deinit {
         print("Issue collector deinit")
-         NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     public func startObserving() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(handleScrenshoot),
-                                               name: UIApplication.userDidTakeScreenshotNotification,
-                                               object: nil)
-    }
+        print("start observing..")
+        NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification, object: nil, queue: .main) { notification in
 
-    @objc private func handleScrenshoot() {
-        print("ScreenShoot!")
-        let image = try! UIImage(data: Data(contentsOf: URL(string: "https://www.google.co.in/logos/doodles/2017/mohammed-rafis-93th-birthday-5885879699636224.2-l.png")!))
-        let urlString = "https://www.google.com/any-link-to-share"
-        
-        let activityVC = UIActivityViewController(activityItems: [urlString, image!], applicationActivities: nil)
-        
-        let root = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController
-        
-        root?.present(activityVC, animated: true, completion: nil)
+            guard let app = notification.object as? UIApplication,
+                let window = app.windows.filter({ $0.isKeyWindow }).first
+                else { return }
+            
+            guard let image = window.rootViewController?.view.asImage() else { return }
+            
+            guard let vc = UIStoryboard.init(name: "Details", bundle: Bundle.init(for: Self.self)).instantiateInitialViewController() as? DetailsViewController else { return }
+            vc.prepareWith(image)
+            
+            window.rootViewController?.present(vc, animated: true, completion: nil)
+        }
     }
 }

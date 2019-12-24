@@ -1,0 +1,6 @@
+module Pods_IssueCollector {
+  umbrella header "Pods-IssueCollector-umbrella.h"
+
+  export *
+  module * { export * }
+}
