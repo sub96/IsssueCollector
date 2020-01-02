@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "IssueCollector"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "Report Issues to Jira easily"
 
   spec.description  = <<-DESC
@@ -17,6 +17,6 @@ This CocoaPods library helps you report issues to jira with just a screenshot!
   spec.swift_version = "4.2"
 
   spec.source        = { :git => "https://github.com/sub96/IsssueCollector.git", :tag => "#{spec.version}" }
-  spec.source_files  = "IssueCollector/**/*.{h,m,swift}"
+  spec.source_files  = "IssueCollector/**/*.{h,m,swift,xcassets}"
 
 end
