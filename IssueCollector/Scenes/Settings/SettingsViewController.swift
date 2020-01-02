@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let tap = UITapGestureRecognizer.init(target: <#T##Any?#>, action: <#T##Selector?#>)
+        //tap
     }
     
     func preparePicker() {

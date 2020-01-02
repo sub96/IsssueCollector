@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4CEF37E5161E7896CCEDBF8B /* libPods-IssueCollectorExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A79BCE01557911FA272351 /* libPods-IssueCollectorExample.a */; };
+		8C366C043C1882446CAA64E4 /* libPods-IssueCollectorExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDB73C3B2F06F54CC76086B /* libPods-IssueCollectorExample.a */; };
 		912FC42A23B236D10056C758 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FC42923B236D10056C758 /* SettingsViewModel.swift */; };
 		9131090323B2573B00D794D6 /* PickerRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9131090223B2573B00D794D6 /* PickerRowView.xib */; };
 		9131090523B25B7900D794D6 /* PickerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131090423B25B7900D794D6 /* PickerRowView.swift */; };
@@ -20,7 +20,7 @@
 		91653F3923B12C7200D4BF0F /* ProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91653F3823B12C7200D4BF0F /* ProjectsResponse.swift */; };
 		9167CABE23B2704B00EA9763 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9167CABD23B2704B00EA9763 /* CustomPickerView.xib */; };
 		9167CAC023B270E000EA9763 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167CABF23B270E000EA9763 /* CustomPickerView.swift */; };
-		9167CAC223B2737900EA9763 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9167CAC123B2737900EA9763 /* Media.xcassets */; };
+		91AAA8B523BDED8A0063BE08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AAA8B423BDED8A0063BE08 /* Assets.xcassets */; };
 		91B7974523B0E6350038CE25 /* IssueCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B7974323B0E6350038CE25 /* IssueCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91B7975223B0E6470038CE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7975123B0E6470038CE25 /* AppDelegate.swift */; };
 		91B7975423B0E6470038CE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7975323B0E6470038CE25 /* SceneDelegate.swift */; };
@@ -30,7 +30,7 @@
 		91B7975E23B0E6470038CE25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B7975C23B0E6470038CE25 /* LaunchScreen.storyboard */; };
 		91B7976423B0E7FD0038CE25 /* IssueCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7976323B0E7FD0038CE25 /* IssueCollector.swift */; };
 		91D3307223B109F50045FD34 /* IssueCollector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91B7974023B0E6350038CE25 /* IssueCollector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F10F67A08163EBF4E55DABDF /* libPods-IssueCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4EA46BC96366F8B557BC63 /* libPods-IssueCollector.a */; };
+		F5601214F72755FC53D924A0 /* libPods-IssueCollector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E42CBDAB435A8C001377F844 /* libPods-IssueCollector.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00654F3EBC195F1130347348 /* Pods-IssueCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollector.debug.xcconfig"; path = "Target Support Files/Pods-IssueCollector/Pods-IssueCollector.debug.xcconfig"; sourceTree = "<group>"; };
-		25A79BCE01557911FA272351 /* libPods-IssueCollectorExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IssueCollectorExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CDB73C3B2F06F54CC76086B /* libPods-IssueCollectorExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IssueCollectorExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3184E8C7B33A13478D446A6D /* Pods-IssueCollectorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollectorExample.debug.xcconfig"; path = "Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample.debug.xcconfig"; sourceTree = "<group>"; };
+		3F37D41587D35B5D06C8B087 /* Pods-IssueCollectorExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollectorExample.release.xcconfig"; path = "Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample.release.xcconfig"; sourceTree = "<group>"; };
 		912FC42523B22DCB0056C758 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		912FC42723B22DE50056C758 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		912FC42923B236D10056C758 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -74,7 +75,7 @@
 		91653F3823B12C7200D4BF0F /* ProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResponse.swift; sourceTree = "<group>"; };
 		9167CABD23B2704B00EA9763 /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		9167CABF23B270E000EA9763 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
-		9167CAC123B2737900EA9763 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		91AAA8B423BDED8A0063BE08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91B7974023B0E6350038CE25 /* IssueCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssueCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B7974323B0E6350038CE25 /* IssueCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IssueCollector.h; sourceTree = "<group>"; };
 		91B7974423B0E6350038CE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,10 +88,9 @@
 		91B7975D23B0E6470038CE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91B7975F23B0E6470038CE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B7976323B0E7FD0038CE25 /* IssueCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCollector.swift; sourceTree = "<group>"; };
-		A445CB932C659DE72F6F47AA /* Pods-IssueCollectorExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollectorExample.release.xcconfig"; path = "Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample.release.xcconfig"; sourceTree = "<group>"; };
-		AE4EA46BC96366F8B557BC63 /* libPods-IssueCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IssueCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9A28237192B0A7406004C7E /* Pods-IssueCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollector.release.xcconfig"; path = "Target Support Files/Pods-IssueCollector/Pods-IssueCollector.release.xcconfig"; sourceTree = "<group>"; };
-		C785E8B4DFC2261DFF2DAE8A /* Pods-IssueCollectorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollectorExample.debug.xcconfig"; path = "Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample.debug.xcconfig"; sourceTree = "<group>"; };
+		CEA7CF348584DB004A5C2B8E /* Pods-IssueCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollector.release.xcconfig"; path = "Target Support Files/Pods-IssueCollector/Pods-IssueCollector.release.xcconfig"; sourceTree = "<group>"; };
+		E42CBDAB435A8C001377F844 /* libPods-IssueCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IssueCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6B493C9BAFCE53BD96D17C1 /* Pods-IssueCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueCollector.debug.xcconfig"; path = "Target Support Files/Pods-IssueCollector/Pods-IssueCollector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F10F67A08163EBF4E55DABDF /* libPods-IssueCollector.a in Frameworks */,
+				F5601214F72755FC53D924A0 /* libPods-IssueCollector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CEF37E5161E7896CCEDBF8B /* libPods-IssueCollectorExample.a in Frameworks */,
+				8C366C043C1882446CAA64E4 /* libPods-IssueCollectorExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,10 +116,10 @@
 		22784F37BE3EB9F44BE313EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				00654F3EBC195F1130347348 /* Pods-IssueCollector.debug.xcconfig */,
-				B9A28237192B0A7406004C7E /* Pods-IssueCollector.release.xcconfig */,
-				C785E8B4DFC2261DFF2DAE8A /* Pods-IssueCollectorExample.debug.xcconfig */,
-				A445CB932C659DE72F6F47AA /* Pods-IssueCollectorExample.release.xcconfig */,
+				F6B493C9BAFCE53BD96D17C1 /* Pods-IssueCollector.debug.xcconfig */,
+				CEA7CF348584DB004A5C2B8E /* Pods-IssueCollector.release.xcconfig */,
+				3184E8C7B33A13478D446A6D /* Pods-IssueCollectorExample.debug.xcconfig */,
+				3F37D41587D35B5D06C8B087 /* Pods-IssueCollectorExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 			children = (
 				912FC42723B22DE50056C758 /* Moya.framework */,
 				912FC42523B22DCB0056C758 /* Alamofire.framework */,
-				AE4EA46BC96366F8B557BC63 /* libPods-IssueCollector.a */,
-				25A79BCE01557911FA272351 /* libPods-IssueCollectorExample.a */,
+				E42CBDAB435A8C001377F844 /* libPods-IssueCollector.a */,
+				0CDB73C3B2F06F54CC76086B /* libPods-IssueCollectorExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -253,7 +253,7 @@
 				91653F2723B10F3100D4BF0F /* Utils */,
 				91653F3323B1204A00D4BF0F /* Network */,
 				91653F2C23B1106A00D4BF0F /* Scenes */,
-				9167CAC123B2737900EA9763 /* Media.xcassets */,
+				91AAA8B423BDED8A0063BE08 /* Assets.xcassets */,
 			);
 			path = IssueCollector;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91B7974823B0E6350038CE25 /* Build configuration list for PBXNativeTarget "IssueCollector" */;
 			buildPhases = (
-				7992E4BB3303F5F56089BC2E /* [CP] Check Pods Manifest.lock */,
+				3D494FCA050AABFA9BC71B7D /* [CP] Check Pods Manifest.lock */,
 				91B7973B23B0E6350038CE25 /* Headers */,
 				91B7973C23B0E6350038CE25 /* Sources */,
 				91B7973D23B0E6350038CE25 /* Frameworks */,
@@ -317,7 +317,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91B7976023B0E6470038CE25 /* Build configuration list for PBXNativeTarget "IssueCollectorExample" */;
 			buildPhases = (
-				E5E9785031C3E24EAEF52F74 /* [CP] Check Pods Manifest.lock */,
+				0A3F3EE688860AC801375EE6 /* [CP] Check Pods Manifest.lock */,
 				91B7974B23B0E6470038CE25 /* Sources */,
 				91B7974C23B0E6470038CE25 /* Frameworks */,
 				91B7974D23B0E6470038CE25 /* Resources */,
@@ -378,7 +378,7 @@
 			files = (
 				91653F2B23B1105E00D4BF0F /* Details.storyboard in Resources */,
 				9167CABE23B2704B00EA9763 /* CustomPickerView.xib in Resources */,
-				9167CAC223B2737900EA9763 /* Media.xcassets in Resources */,
+				91AAA8B523BDED8A0063BE08 /* Assets.xcassets in Resources */,
 				9131090323B2573B00D794D6 /* PickerRowView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,29 +396,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7992E4BB3303F5F56089BC2E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IssueCollector-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5E9785031C3E24EAEF52F74 /* [CP] Check Pods Manifest.lock */ = {
+		0A3F3EE688860AC801375EE6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -434,6 +412,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-IssueCollectorExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D494FCA050AABFA9BC71B7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IssueCollector-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -614,7 +614,7 @@
 		};
 		91B7974923B0E6350038CE25 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00654F3EBC195F1130347348 /* Pods-IssueCollector.debug.xcconfig */;
+			baseConfigurationReference = F6B493C9BAFCE53BD96D17C1 /* Pods-IssueCollector.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -641,7 +641,7 @@
 		};
 		91B7974A23B0E6350038CE25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9A28237192B0A7406004C7E /* Pods-IssueCollector.release.xcconfig */;
+			baseConfigurationReference = CEA7CF348584DB004A5C2B8E /* Pods-IssueCollector.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -667,7 +667,7 @@
 		};
 		91B7976123B0E6470038CE25 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C785E8B4DFC2261DFF2DAE8A /* Pods-IssueCollectorExample.debug.xcconfig */;
+			baseConfigurationReference = 3184E8C7B33A13478D446A6D /* Pods-IssueCollectorExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -688,7 +688,7 @@
 		};
 		91B7976223B0E6470038CE25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A445CB932C659DE72F6F47AA /* Pods-IssueCollectorExample.release.xcconfig */;
+			baseConfigurationReference = 3F37D41587D35B5D06C8B087 /* Pods-IssueCollectorExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
