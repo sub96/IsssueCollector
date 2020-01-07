@@ -17,8 +17,7 @@ This CocoaPods library helps you report issues to jira with just a screenshot!
   spec.swift_version = "4.2"
 
   spec.source        = { :git => "https://github.com/sub96/IsssueCollector.git", :tag => "#{spec.version}" }
-  spec.resources = ["IssueCollector/Pod.bundle"]
-  spec.source_files  = "IssueCollector/**/*.{h,m,swift}"
+  spec.source_files  = "IssueCollector/**/*.{h,m,swift,storyboard}"
   spec.dependency 'Moya'
   spec.dependency 'Nuke'
 
