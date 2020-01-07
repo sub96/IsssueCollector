@@ -33,7 +33,15 @@ class ReportIssueViewController: UIViewController {
     @IBOutlet private weak var issueTypeStackView: UIStackView!
     
     private let viewModel = ReportIssueViewModel()
-    private lazy var activityIndicator = UIActivityIndicatorView.init(style: .medium)
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        if #available(iOS 13, *) {
+            return UIActivityIndicatorView.init(style: .medium)
+        } else {
+            return UIActivityIndicatorView.init(style: .white)
+        }
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

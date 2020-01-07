@@ -102,8 +102,9 @@ extension StopRecordingView {
     
     private func presentIssueCollectorFlow(_ previewController: RPPreviewViewController, with url: URL) {
         DispatchQueue.main.async {
-            guard let vc = UIStoryboard.init(name: "Details", bundle: Bundle.init(for: Self.self))
-                .instantiateViewController(identifier: "detailsVC") as? DetailsViewController else { return }
+            guard let vc = UIStoryboard.init(name: "Details",
+                                             bundle: Bundle.init(for: Self.self))
+                .instantiateViewController(withIdentifier: "detailsVC") as? DetailsViewController else { return }
             vc.prepareWith(.video(url))
             
             previewController.navigationController?.pushViewController(vc, animated: true)
