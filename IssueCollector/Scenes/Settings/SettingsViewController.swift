@@ -10,30 +10,143 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet private weak var SelectProjectButton: UIButton!
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var userName: UILabel!
+    @IBOutlet private weak var userEmail: UILabel!
+    @IBOutlet private weak var userRole: UILabel!
     @IBOutlet private weak var pickerView: CustomPickerView!
+    @IBOutlet private weak var selectProjectButton: UIButton!
+    @IBOutlet private weak var issueTypeButton: UIButton!
+    @IBOutlet private weak var issueTypeStack: UIStackView!
     
     private var viewModel = SettingsViewModel()
+    private let defaultManager = DefaultManager()
+    private let nuke = NukeImageLoader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer.init(target: <#T##Any?#>, action: <#T##Selector?#>)
-    }
-    
-    func preparePicker() {
-        self.viewModel.getProjects { response in
-            let dataSource = response.map { (name: $0.name,
-                                             url: $0.avatarUrls.the48X48) }
-            self.pickerView.configure(with: dataSource)
+        pickerView.delegate = self
+        configureTapGesture()
+        
+        viewModel.configureProjects()
+        
+        viewModel.configureCurrentUser { [weak self] userResponse in
+            switch userResponse {
+            case .success(let user):
+                self?.setCurrentUser(user)
+                
+            case .failure(let error):
+                self?.presentAlert(with: error.localizedDescription)
+            }
+        }
+        
+        if let settings = defaultManager.getDefaultSettings() {
+            self.selectProjectButton.setTitle(settings.project.name,
+                                              for: .normal)
+            viewModel.selectedProject = settings.project
+            
+            if let issueType = settings.issueType {
+                issueTypeStack.isHidden = false
+                self.issueTypeButton.setTitle(issueType.name,
+                                              for: .normal)
+                viewModel.selectedIssueType = issueType
+            }
         }
     }
     
-    @IBAction func closeButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    private func setCurrentUser(_ user: UserResponse) {
+        self.userName.text = user.name
+        self.userEmail.text = user.email
+        self.userRole.text = user.extendedProfile.jobTitle
+        nuke.loadImage(with: user.picture, into: userImageView)
     }
     
-    @IBAction func selectProjectButtonPressed(_ sender: Any) {
+    private func configureTapGesture() {
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(endEditing))
+        self.view.addGestureRecognizer(tap)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    @objc private func endEditing() {
+        !self.pickerView.isShowingPicker ?
+            self.pickerView.isShowingPicker.toggle() : ()
+    }
+    
+    func configureWithProjects() {
+        let dataSource = viewModel.projects.asProject()
+        self.pickerView.configure(with: dataSource, and: 0)
         pickerView.isShowingPicker.toggle()
+    }
+    
+    func configureWithIssueType() {
+        guard let dataSource = viewModel.projectDetails?.asIssueType() else { return }
+        self.pickerView.configure(with: dataSource, and: 1)
+        pickerView.isShowingPicker.toggle()
+    }
+    
+    @IBAction func pickerViewButtonPressed(_ sender: Any) {
+        guard let button = sender as? UIButton else { return }
+        
+        switch button.tag {
+        case 0:
+            configureWithProjects()
+            
+        case 1:
+            configureWithIssueType()
+            
+        default: break
+        }
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        defaultManager.defaultProject = viewModel.selectedProject
+        defaultManager.defaultIssueType = viewModel.selectedIssueType
+        defaultManager.isNotFirstLaunch = true
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension SettingsViewController: CustomPickerControllerDelegate {
+    func didSelect(_ picker: CustomPickerView, element: PickerElement, and tag: Int?) {
+        guard let tag = tag else { return }
+        switch tag {
+        case 0:
+            selectProjectButton.setTitle(element.name,
+                                         for: .normal)
+            viewModel.selectedProject = element
+            
+        case 1:
+            issueTypeButton.setTitle(element.name,
+                                     for: .normal)
+            viewModel.selectedIssueType = element
+            
+        default:
+            break
+        }
+        
+    }
+    
+    func doneButtonPressed(_ picker: CustomPickerView, tag: Int?) {
+        guard let tag = tag else { return }
+
+        switch tag {
+        case 0:
+            self.viewModel.getProjectDetails { response in
+                switch response {
+                case .success:
+                    UIView.animate(withDuration: 0.2) {
+                        self.issueTypeStack.isHidden = false
+                    }
+                    
+                case .failure(let error):
+                    self.presentAlert(with: error.localizedDescription)
+                }
+            }
+            
+        default:
+            break
+        }
+        endEditing()
     }
 }
 

@@ -10,27 +10,63 @@ import Foundation
 import Moya
 import Alamofire
 
-enum ProjectTarget: TargetType, AccessTokenAuthorizable {
+enum ProjectTarget: TargetType {
+        
+    case login(request: LoginRequest)
+    case getAccessToken(request: AccessTokenRequest)
+    case getCurrentUser
     
     case getProjects
+    case getProjectDetails(id: Int)
+    case createIssue(request: CreateIssueRequest)
+    case addAttachment(data: Data, projectID: Int)
+    
+    var accessToken: String {
+        return String.init(data: KeyChain().load(key: KeyChain.Key.accessToken.rawValue) ?? Data(),
+                           encoding: .utf8)  ?? ""
+    }
     
     var baseURL: URL {
-        let base = URL.init(string: "https://dtt-dev.atlassian.net/rest/api/3")!
         
         switch self {
-        case .getProjects:
-            return base.appendingPathComponent("project")
+        case .login,
+             .getAccessToken:
+            return URL.init(string: "https://auth.atlassian.com/oauth/token")!
+            
+        case .getCurrentUser:
+            return URL.init(string: "https://api.atlassian.com/me")!
+            
+        default:
+            return URL.init(string: "https://dtt-dev.atlassian.net/rest/api/3")!
         }
     }
     
     var path: String {
-        return ""
+        switch self {
+         case .getProjects:
+             return "project"
+         case .getProjectDetails(let id):
+             return "project/\(id)"
+         case .createIssue:
+             return "issue"
+         case .addAttachment(data: _, projectID: let id):
+             return "issue/\(id)/attachments"
+        default:
+            return ""
+        }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProjects:
+        case .getProjects,
+             .getProjectDetails,
+             .getCurrentUser:
             return .get
+        case .createIssue,
+             .addAttachment,
+             .login,
+             .getAccessToken:
+            return .post
         }
     }
     
@@ -40,17 +76,46 @@ enum ProjectTarget: TargetType, AccessTokenAuthorizable {
     
     var task: Task {
         switch self {
-        case .getProjects:
+        case .getProjects,
+             .getProjectDetails,
+             .getCurrentUser:
             return .requestPlain
+            
+        case .createIssue(let request):
+            return .requestJSONEncodable(request)
+            
+        case .addAttachment(let data, _):
+            let data = MultipartFormData.init(provider: .data(data),
+                                              name: "file",
+                                              fileName: "file",
+                                              mimeType: "image/jpeg")
+            return .uploadMultipart([data])
+            
+        case .login(request: let request):
+            return .requestJSONEncodable(request)
+            
+        case .getAccessToken(let request):
+            return .requestJSONEncodable(request)
         }
     }
     
-    var authorizationType: AuthorizationType {
-        return .basic
-    }
-
-    
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        switch self {
+        case .getCurrentUser:
+            return ["Authorization": "Bearer \(accessToken)",
+                "Accept": "application/json"]
+            
+        case .getAccessToken:
+            return ["Content-Type": "application/json"]
+            
+        case .addAttachment:
+            return ["Content-Type": "multipart/form-data",
+                    "X-Atlassian-Token": "no-check",
+                    "Authorization": "Bearer \(accessToken)"]
+
+        default:
+            return ["Content-Type": "application/json",
+                    "Authorization": "Bearer \(accessToken)"]
+        }
     }
 }

@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "163665FA-E929-4B0C-A5A4-D4F4D16C600C"
+            uuid = "6B4BD6B1-69F1-4749-86B2-E570E88B64FA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IssueCollector/Views/CustomPickerView/CustomPickerView.swift"
+            filePath = "IssueCollector/Views/StopRecordingView/StopRecordingView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "getVideoPath(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

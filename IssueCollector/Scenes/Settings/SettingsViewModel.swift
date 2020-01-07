@@ -11,26 +11,43 @@ import Moya
 
 class SettingsViewModel {
     
-    private var provider: MoyaProvider<ProjectTarget> = {
-        return MoyaProvider<ProjectTarget>.init(plugins: [AccessTokenPlugin.init(tokenClosure: { () -> String in
-            guard let loginData = String(format: "\("saghir@d-tt.nl"):\("KR8x2M6urnyOA7KH4Cum1693")")
-                .data(using: .utf8) else { return "" }
-            return loginData.base64EncodedString()
-        })])
-    }()
+    enum UserErrors: Error {
+        case noUserFound
+    }
     
-    func viewDidLoad() {}
+    let jiraProvider = JiraProvider.shared
     
-    func getProjects(onCompletion: @escaping (SubrojectResponse) -> Void) {
-        provider.request(ProjectTarget.getProjects) { result in
-            do {
-                let response = try result
-                    .get()
-                    .filterSuccessfulStatusCodes()
-                    .map(SubrojectResponse.self)
-                onCompletion(response)
-            } catch {
-                print(error.localizedDescription)
+    var currentUser: UserResponse?
+    var projects: SubrojectResponse = []
+    var projectDetails: SubrojectDetailsResponse?
+    
+    var selectedProject: PickerElement?
+    var selectedIssueType: PickerElement?
+    
+    func configureProjects() {
+        self.projects = self.jiraProvider.projects
+    }
+    
+    func configureCurrentUser(onCompletion: @escaping (Result<UserResponse, Error>) -> Void) {
+        guard let currentUser = self.jiraProvider.currentUser else {
+            onCompletion(.failure(UserErrors.noUserFound))
+            return
+        }
+        
+        self.currentUser = currentUser
+        onCompletion(.success(currentUser))
+    }
+    
+    func getProjectDetails(onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        guard let selectedProject = selectedProject else { return }
+        jiraProvider.getProjectDetails(with: selectedProject.id) { response in
+            switch response {
+            case .success(let projectDetails):
+                self.projectDetails = projectDetails
+                onCompletion(.success(()))
+                
+            case .failure(let error):
+                onCompletion(.failure(error))
             }
         }
     }

@@ -46,13 +46,13 @@ struct AvatarUrls: Codable {
 // MARK: - ProjectCategory
 struct ProjectCategory: Codable {
     let projectCategorySelf: String
-    let id: String
-    let name: Name
-    let projectCategoryDescription: String
+    let id, name: String
+    let isAssigneeTypeValid: Bool?
+    let projectCategoryDescription: String?
 
     enum CodingKeys: String, CodingKey {
         case projectCategorySelf = "self"
-        case id, name
+        case id, name, isAssigneeTypeValid
         case projectCategoryDescription = "description"
     }
 }
@@ -75,5 +75,15 @@ enum Name: String, Codable {
 struct Properties: Codable {
 }
 
-
 typealias SubrojectResponse = [SubrojectResponseElement]
+
+extension SubrojectResponse {
+    func asProject() -> [PickerElement] {
+        let data = self.map { (name: $0.name,
+                               url: $0.avatarUrls.the48X48,
+                               id: Int($0.id)!) }
+        return data.filter({ element in
+            return element.name.contains("Dev") || element.name.contains("QA")
+        })
+    }
+}

@@ -27,10 +27,11 @@ public final class IssueCollector {
             
             guard let image = window.rootViewController?.view.asImage() else { return }
             
-            guard let vc = UIStoryboard.init(name: "Details", bundle: Bundle.init(for: Self.self)).instantiateInitialViewController() as? DetailsViewController else { return }
-            vc.prepareWith(image)
+            guard let nav = UIStoryboard.init(name: "Details", bundle: Bundle.init(for: Self.self)).instantiateInitialViewController() as? UINavigationController,
+                let vc = nav.topViewController as? DetailsViewController else { return }
+            vc.prepareWith(.image(image))
             
-            window.rootViewController?.present(vc, animated: true, completion: nil)
+            window.rootViewController?.present(nav, animated: true, completion: nil)
         }
     }
 }
