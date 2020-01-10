@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		9131090323B2573B00D794D6 /* PickerRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9131090223B2573B00D794D6 /* PickerRowView.xib */; };
 		9131090523B25B7900D794D6 /* PickerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131090423B25B7900D794D6 /* PickerRowView.swift */; };
 		9131090723B25BC700D794D6 /* XibConnected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131090623B25BC700D794D6 /* XibConnected.swift */; };
+		914D1E1623C78D44009D8DF3 /* b2.png in Resources */ = {isa = PBXBuildFile; fileRef = 914D1E1523C78D44009D8DF3 /* b2.png */; };
+		914D1E1823C78DC6009D8DF3 /* zizou.png in Resources */ = {isa = PBXBuildFile; fileRef = 914D1E1723C78DC6009D8DF3 /* zizou.png */; };
 		91653F2623B10F2A00D4BF0F /* UIView + asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91653F2523B10F2A00D4BF0F /* UIView + asImage.swift */; };
 		91653F2B23B1105E00D4BF0F /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91653F2A23B1105E00D4BF0F /* Details.storyboard */; };
 		91653F2E23B1129100D4BF0F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91653F2D23B1129100D4BF0F /* DetailsViewController.swift */; };
@@ -28,6 +30,7 @@
 		91A39E7E23C478F700EF5AF7 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E7D23C478F700EF5AF7 /* KeyChain.swift */; };
 		91A39E8023C489BF00EF5AF7 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E7F23C489BF00EF5AF7 /* DetailsViewModel.swift */; };
 		91A39E8223C4A6BD00EF5AF7 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E8123C4A6BD00EF5AF7 /* UserResponse.swift */; };
+		91A39E8423C4E8A900EF5AF7 /* String + BulletPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E8323C4E8A800EF5AF7 /* String + BulletPoint.swift */; };
 		91AAA8BD23BE01C30063BE08 /* JiraProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AAA8BC23BE01C30063BE08 /* JiraProvider.swift */; };
 		91AAA8BF23BE02720063BE08 /* NukeImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AAA8BE23BE02720063BE08 /* NukeImageLoader.swift */; };
 		91AAA8C223BE066B0063BE08 /* UIViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AAA8C123BE066B0063BE08 /* UIViewController + Alert.swift */; };
@@ -55,7 +58,6 @@
 		91FA874E23BF719600D8A2CC /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FA874A23BF719600D8A2CC /* diamond.png */; };
 		91FA874F23BF719600D8A2CC /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FA874B23BF719600D8A2CC /* star.png */; };
 		91FA875523BF77BD00D8A2CC /* taha.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FA875423BF77BD00D8A2CC /* taha.png */; };
-		91FA875723BF784400D8A2CC /* realTaha.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FA875623BF784400D8A2CC /* realTaha.png */; };
 		91FA875B23BF7BBC00D8A2CC /* DefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA875A23BF7BBC00D8A2CC /* DefaultManager.swift */; };
 		91FA875F23BF7D8E00D8A2CC /* ConfettiContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FA875E23BF7D8E00D8A2CC /* ConfettiContainerView.swift */; };
 		91FA876123BF7DA100D8A2CC /* ConfettiContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FA876023BF7DA100D8A2CC /* ConfettiContainerView.xib */; };
@@ -96,6 +98,8 @@
 		9131090223B2573B00D794D6 /* PickerRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerRowView.xib; sourceTree = "<group>"; };
 		9131090423B25B7900D794D6 /* PickerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRowView.swift; sourceTree = "<group>"; };
 		9131090623B25BC700D794D6 /* XibConnected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibConnected.swift; sourceTree = "<group>"; };
+		914D1E1523C78D44009D8DF3 /* b2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b2.png; sourceTree = "<group>"; };
+		914D1E1723C78DC6009D8DF3 /* zizou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zizou.png; sourceTree = "<group>"; };
 		91653F2523B10F2A00D4BF0F /* UIView + asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + asImage.swift"; sourceTree = "<group>"; };
 		91653F2A23B1105E00D4BF0F /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		91653F2D23B1129100D4BF0F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		91A39E7D23C478F700EF5AF7 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		91A39E7F23C489BF00EF5AF7 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		91A39E8123C4A6BD00EF5AF7 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		91A39E8323C4E8A800EF5AF7 /* String + BulletPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + BulletPoint.swift"; sourceTree = "<group>"; };
 		91AAA8BC23BE01C30063BE08 /* JiraProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraProvider.swift; sourceTree = "<group>"; };
 		91AAA8BE23BE02720063BE08 /* NukeImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeImageLoader.swift; sourceTree = "<group>"; };
 		91AAA8C123BE066B0063BE08 /* UIViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert.swift"; sourceTree = "<group>"; };
@@ -142,7 +147,6 @@
 		91FA874A23BF719600D8A2CC /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
 		91FA874B23BF719600D8A2CC /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		91FA875423BF77BD00D8A2CC /* taha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taha.png; sourceTree = "<group>"; };
-		91FA875623BF784400D8A2CC /* realTaha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = realTaha.png; sourceTree = "<group>"; };
 		91FA875A23BF7BBC00D8A2CC /* DefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultManager.swift; sourceTree = "<group>"; };
 		91FA875E23BF7D8E00D8A2CC /* ConfettiContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiContainerView.swift; sourceTree = "<group>"; };
 		91FA876023BF7DA100D8A2CC /* ConfettiContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfettiContainerView.xib; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				91653F2523B10F2A00D4BF0F /* UIView + asImage.swift */,
 				91AAA8C123BE066B0063BE08 /* UIViewController + Alert.swift */,
 				91D38E1323C39F9600EA8450 /* URL + query.swift */,
+				91A39E8323C4E8A800EF5AF7 /* String + BulletPoint.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -411,8 +416,9 @@
 				91FA874A23BF719600D8A2CC /* diamond.png */,
 				91FA874B23BF719600D8A2CC /* star.png */,
 				91FA875423BF77BD00D8A2CC /* taha.png */,
+				914D1E1523C78D44009D8DF3 /* b2.png */,
 				91FA874823BF719500D8A2CC /* triangle.png */,
-				91FA875623BF784400D8A2CC /* realTaha.png */,
+				914D1E1723C78DC6009D8DF3 /* zizou.png */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 				91B7973C23B0E6350038CE25 /* Sources */,
 				91B7973D23B0E6350038CE25 /* Frameworks */,
 				91B7973E23B0E6350038CE25 /* Resources */,
+				BF5534559E45D6C3F0F97C0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -468,6 +475,7 @@
 				91B7974C23B0E6470038CE25 /* Frameworks */,
 				91B7974D23B0E6470038CE25 /* Resources */,
 				91D3307123B109E60045FD34 /* Embed Frameworks */,
+				7A385A1C6358EC40CE502F1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -522,7 +530,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91FA875723BF784400D8A2CC /* realTaha.png in Resources */,
+				914D1E1623C78D44009D8DF3 /* b2.png in Resources */,
+				914D1E1823C78DC6009D8DF3 /* zizou.png in Resources */,
 				91653F2B23B1105E00D4BF0F /* Details.storyboard in Resources */,
 				91FA876123BF7DA100D8A2CC /* ConfettiContainerView.xib in Resources */,
 				91FA875523BF77BD00D8A2CC /* taha.png in Resources */,
@@ -570,6 +579,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A385A1C6358EC40CE502F1A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF5534559E45D6C3F0F97C0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IssueCollector/Pods-IssueCollector-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IssueCollector/Pods-IssueCollector-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IssueCollector/Pods-IssueCollector-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E5E9785031C3E24EAEF52F74 /* [CP] Check Pods Manifest.lock */ = {
@@ -627,6 +670,7 @@
 				91653F3223B11DB200D4BF0F /* SettingsViewController.swift in Sources */,
 				91FA874623BF70DB00D8A2CC /* ConfettiManager.swift in Sources */,
 				912FC42A23B236D10056C758 /* SettingsViewModel.swift in Sources */,
+				91A39E8423C4E8A900EF5AF7 /* String + BulletPoint.swift in Sources */,
 				9182435323BE2F0200BA97FB /* ProjectDetails.swift in Sources */,
 				91A39E8223C4A6BD00EF5AF7 /* UserResponse.swift in Sources */,
 				9131090523B25B7900D794D6 /* PickerRowView.swift in Sources */,

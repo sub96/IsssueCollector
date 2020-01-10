@@ -308,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="o0n-CK-LdF">
-                                <rect key="frame" x="16" y="104" width="382" height="230"/>
+                                <rect key="frame" x="16" y="104" width="382" height="322.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yuK-b6-Qwq">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="52.5"/>
@@ -328,8 +328,26 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-X6-ozu">
+                                        <rect key="frame" x="0.0" y="56.5" width="382" height="52.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Issue Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-X5-bfh">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPj-JK-LnS">
+                                                <rect key="frame" x="0.0" y="22.5" width="382" height="30"/>
+                                                <state key="normal" title="Issue Type.."/>
+                                                <connections>
+                                                    <action selector="pickerViewButtonPressed:" destination="OUK-lB-un8" eventType="touchUpInside" id="YzK-IW-Bhg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rn3-0m-hM0">
-                                        <rect key="frame" x="0.0" y="56.5" width="382" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="113" width="382" height="56.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRa-gm-V3Q">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -345,7 +363,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mid-PX-S9A">
-                                        <rect key="frame" x="0.0" y="117" width="382" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="173.5" width="382" height="72.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOA-1y-83L">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -353,29 +371,31 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please add a description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyX-d6-hpg">
-                                                <rect key="frame" x="0.0" y="22.5" width="382" height="34"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="50" text="placeholder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ofq-3a-Kmn">
+                                                <rect key="frame" x="0.0" y="22.5" width="382" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-X6-ozu">
-                                        <rect key="frame" x="0.0" y="177.5" width="382" height="52.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HnY-jh-nN0">
+                                        <rect key="frame" x="0.0" y="250" width="382" height="72.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Issue Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-X5-bfh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step to reproduce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a4-h1-9sx">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPj-JK-LnS">
-                                                <rect key="frame" x="0.0" y="22.5" width="382" height="30"/>
-                                                <state key="normal" title="Issue Type.."/>
-                                                <connections>
-                                                    <action selector="pickerViewButtonPressed:" destination="OUK-lB-un8" eventType="touchUpInside" id="YzK-IW-Bhg"/>
-                                                </connections>
-                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="50" text="placeholder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="axm-Uz-xVR">
+                                                <rect key="frame" x="0.0" y="22.5" width="382" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -408,11 +428,13 @@
                     <navigationItem key="navigationItem" id="6GM-ua-PUV"/>
                     <connections>
                         <outlet property="descriptionStackView" destination="mid-PX-S9A" id="iHO-7e-kAe"/>
-                        <outlet property="descriptionTextField" destination="iyX-d6-hpg" id="sar-Ab-gBQ"/>
+                        <outlet property="descriptionTextView" destination="ofq-3a-Kmn" id="Et3-Lk-2QF"/>
                         <outlet property="issueTypeButton" destination="aPj-JK-LnS" id="f2j-nj-mXs"/>
                         <outlet property="issueTypeStackView" destination="Trv-X6-ozu" id="fxG-8W-Gbt"/>
                         <outlet property="pickerView" destination="HyY-N4-J7Y" id="Xd4-AT-HMS"/>
                         <outlet property="projectButton" destination="xvm-ou-P1n" id="Pl6-Xd-YxT"/>
+                        <outlet property="stepToReproduceStackView" destination="HnY-jh-nN0" id="46G-i9-2lf"/>
+                        <outlet property="stepToReproduceTextView" destination="axm-Uz-xVR" id="2nZ-w5-iFz"/>
                         <outlet property="summaryStackView" destination="rn3-0m-hM0" id="xwe-Ww-mJb"/>
                         <outlet property="summaryTextField" destination="mjE-it-uua" id="eDV-Qb-fdQ"/>
                     </connections>

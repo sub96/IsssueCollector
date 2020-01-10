@@ -28,7 +28,13 @@ struct CreateIssueRequest: Codable {
                                                      version: 1,
                                                      content: [DescriptionContent.init(type: "paragraph",
                                                                                        content: [ContentContent.init(text: "nil",
-                                                                                                                     type: "text")])]))
+                                                                                                                     type: "text")])]),
+                                  stepsToReproduce: .init(type: "doc",
+                                                          version: 1,
+                                                          content: [DescriptionContent.init(type: "paragraph",
+                                                                                            content: [ContentContent.init(text: "dsfsdfsd",
+                                                                                                                          type: "text")])])
+        )
     }
 }
 
@@ -39,11 +45,13 @@ struct Fields: Codable {
     var fieldsDescription: Description
     var labels: [String]
     var environment: Description
+    var stepsToReproduce: Description
 
     enum CodingKeys: String, CodingKey {
         case summary, issuetype, project
         case fieldsDescription = "description"
         case labels, environment
+        case stepsToReproduce = "customfield_10062"
     }
 }
 

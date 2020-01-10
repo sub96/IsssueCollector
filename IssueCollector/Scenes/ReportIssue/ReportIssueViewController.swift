@@ -22,15 +22,23 @@ class ReportIssueViewController: UIViewController {
             summaryTextField.delegate = self
         }
     }
-    @IBOutlet private weak var descriptionTextField: UITextField! {
+    
+    @IBOutlet weak var descriptionTextView: UITextView! {
         didSet {
-            descriptionTextField.delegate = self
+            configureTextView(textView: descriptionTextView, with: "Add a description ")
+        }
+    }
+
+    @IBOutlet weak var stepToReproduceTextView: UITextView! {
+        didSet {
+            configureTextView(textView: stepToReproduceTextView, with: "Add the steps to reproduce")
         }
     }
     
     @IBOutlet private weak var summaryStackView: UIStackView!
     @IBOutlet private weak var descriptionStackView: UIStackView!
     @IBOutlet private weak var issueTypeStackView: UIStackView!
+    @IBOutlet private weak var stepToReproduceStackView: UIStackView!
     
     private let viewModel = ReportIssueViewModel()
     
@@ -90,6 +98,7 @@ class ReportIssueViewController: UIViewController {
         self.descriptionStackView.isHidden = true
         self.issueTypeStackView.isHidden = true
         self.summaryStackView.isHidden = true
+        self.stepToReproduceStackView.isHidden = true
     }
     
     @IBAction func reportIssueButtonPressed(_ sender: Any) {
@@ -150,6 +159,7 @@ extension ReportIssueViewController: CustomPickerControllerDelegate {
                         self?.descriptionStackView.isHidden = false
                         self?.issueTypeStackView.isHidden = false
                         self?.summaryStackView.isHidden = false
+                        self?.stepToReproduceStackView.isHidden = false
                     }
 
                 case .failure(let error):
@@ -189,11 +199,77 @@ extension ReportIssueViewController: UITextFieldDelegate {
         case summaryTextField:
             self.viewModel.addSummary(textField.text ?? "")
             
-        case descriptionTextField:
-            self.viewModel.addDescription(textField.text ?? "")
+        default:
+            break
+        }
+    }
+}
+
+extension ReportIssueViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            if textView == stepToReproduceTextView {
+                textView.text = "\u{2022} "
+            } else {
+                textView.text = ""
+            }
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Please add the steps to reproduce"
+            textView.textColor = UIColor.lightGray
+        }
+        
+        switch textView {
+        case descriptionTextView:
+            self.viewModel.addDescription(descriptionTextView.text)
+
+        case stepToReproduceTextView:
+            break
             
         default:
             break
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView == stepToReproduceTextView {
+            if text.contains("\n") {
+                textView.text = textView.text + "\n\u{2022} "
+                adjustSize(textView)
+                return false
+            }
+        }
+        return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        adjustSize(textView)
+    }
+    
+    private func adjustSize(_ textView: UITextView) {
+        let fixedWidth = textView.frame.size.width
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth,
+                                                   height: CGFloat.greatestFiniteMagnitude))
+        textView.frame.size = CGSize(width: max(newSize.width, fixedWidth),
+                                     height: newSize.height)
+    }
+    
+    private func configureTextView(textView: UITextView, with placeholder: String) {
+        textView.delegate = self
+        textView.text = placeholder
+        textView.textColor = UIColor.lightGray
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.init(red: 204.0/255.0,
+                                                  green: 204.0/255.0,
+                                                  blue: 204.0/255.0,
+                                                  alpha: 1).cgColor
+        textView.layer.cornerRadius = 4
+        textView.translatesAutoresizingMaskIntoConstraints = true
+        textView.isScrollEnabled = false
     }
 }

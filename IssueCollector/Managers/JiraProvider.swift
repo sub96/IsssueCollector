@@ -111,6 +111,20 @@ class JiraProvider {
         }
     }
     
+    func getFields() {
+        provider.request(.getFields) { (resposne) in
+            do {
+                let result = try resposne
+                    .get()
+                    .filterSuccessfulStatusCodes()
+                    .mapJSON()
+                print(result)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     func addAttachment(to projectID: Int, onCompletion: @escaping (Result<Void, Error>) -> Void) {
         let data: Data? = {
             switch self.capturedFile {

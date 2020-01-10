@@ -31,6 +31,7 @@ class PreviewView: UIView, XibConnected {
                 self.playButton.isHidden = true
                 self.containerView.addSubview(imageView!)
                 imageView?.constraint(to: self)
+                imageView?.contentMode = .scaleAspectFit
                 
             case .video(let url):
                 configureVideoPlayer(with: url)
@@ -63,7 +64,7 @@ class PreviewView: UIView, XibConnected {
         player = AVPlayer.init(url: url)
         playerLayer = AVPlayerLayer.init(player: player)
         playerLayer?.frame = self.frame
-        playerLayer?.videoGravity = .resizeAspectFill
+        playerLayer?.videoGravity = .resizeAspect
         if let playerLayer = playerLayer {
             self.containerView.layer.addSublayer(playerLayer)
             NotificationCenter.default.addObserver(self,

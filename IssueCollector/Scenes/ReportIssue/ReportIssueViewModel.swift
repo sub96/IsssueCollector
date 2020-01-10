@@ -37,6 +37,14 @@ class ReportIssueViewModel {
                                                                                  content: [.init(text: description,
                                                                                                  type: "text")])])
       }
+    
+    func addStepToReproduce(_ description: String) {
+        self.createIssueRequest.fields.fieldsDescription = .init(type: "doc",
+                                                                 version: 1,
+                                                                 content: [.init(type: "paragraph",
+                                                                                 content: [.init(text: description,
+                                                                                                 type: "text")])])
+      }
 
     func addEnvironment(_ environment: String) {
         self.createIssueRequest.fields.environment = .init(type: "doc",

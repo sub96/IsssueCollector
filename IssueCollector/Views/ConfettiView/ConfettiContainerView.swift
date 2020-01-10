@@ -79,15 +79,19 @@ class ConfettiContainerView: UIView, XibConnected {
         self.confettiContainer.addSubview(self.confettiView!)
         self.confettiView?.intensity = 0.5
         
-        let realTaha = UIImage.init(named: "realTaha",
-                                    in: Bundle(for: ConfettiView.self),
-                                    compatibleWith: nil)!
-        
         let taha = UIImage.init(named: "taha",
                                 in: Bundle(for: ConfettiView.self),
                                 compatibleWith: nil)!
         
-        self.confettiView?.add(images: [realTaha, taha])
+        let flyTaha = UIImage.init(named: "b2",
+                                in: Bundle(for: ConfettiView.self),
+                                compatibleWith: nil)!
+//
+//        let zizou = UIImage.init(named: "zizou",
+//                                in: Bundle(for: ConfettiView.self),
+//                                compatibleWith: nil)!
+        
+        self.confettiView?.add(images: [flyTaha, taha])
 
     }
 }
