@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 import IQKeyboardManagerSwift
+import AVFoundation
 
 public enum Gesture {
     case shake
@@ -24,6 +25,7 @@ public final class IssueCollector {
 	private lazy var xInNegativeDirection = 0.0
 	private lazy var shakeCount = 0
 	private lazy var tempVariable = 0
+    private lazy var player = AVAudioPlayer()
 		
     deinit {
         print("Issue collector deinit")
@@ -63,10 +65,29 @@ public final class IssueCollector {
 				if self.shakeCount > 5 {
 					self.tempVariable = self.tempVariable + 1
 					self.shakeCount = 0
+                    self.whipMuuu()
 					self.presentFlow()
 				 }
 			}
         }
+    }
+    
+    private func whipMuuu() {
+        
+        guard let url = Bundle.init(for: IssueCollector.self).url(forResource: "cowspnk",
+                                                                  withExtension: "wav") else { return }
+
+          do {
+              try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+              try AVAudioSession.sharedInstance().setActive(true)
+
+              player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+
+              player.play()
+
+          } catch let error {
+              print(error.localizedDescription)
+          }
     }
     
     func presentFlow() {

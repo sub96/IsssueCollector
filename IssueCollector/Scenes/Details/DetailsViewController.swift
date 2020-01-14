@@ -41,7 +41,6 @@ class DetailsViewController: UIViewController {
             }
         } else {
             showConfettiView()
-            DefaultManager().isNotFirstLaunch = true
         }
     }
     

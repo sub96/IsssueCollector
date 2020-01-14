@@ -89,24 +89,26 @@ extension StopRecordingView {
                  let fetchResult = PHAsset.fetchAssets(with: .video, options: fetchOption).lastObject
                  PHImageManager().requestAVAsset(forVideo: fetchResult!, options: nil) { (asset, _, _) in
                     let newOBJ = asset as! AVURLAsset
-                    self?.presentIssueCollectorFlow(previewController, with: newOBJ.url)
+                    DispatchQueue.main.async {
+                        self?.presentIssueCollectorFlow(previewController,
+                                                        with: newOBJ.url)
+                    }
                  }
-             } else {
-                DispatchQueue.main.async {
-                    previewController.presentAlert(with: "Something went wrong")
-                }
-            }
+             }
          }
     }
     
     private func presentIssueCollectorFlow(_ previewController: RPPreviewViewController, with url: URL) {
         DispatchQueue.main.async {
-            guard let vc = UIStoryboard.init(name: "Details",
+            guard let nav = UIStoryboard.init(name: "Details",
                                              bundle: Bundle.init(for: Self.self))
-                .instantiateViewController(withIdentifier: "detailsVC") as? DetailsViewController else { return }
+                .instantiateInitialViewController() as? UINavigationController,
+                let vc = nav.topViewController as? DetailsViewController else { return }
             vc.prepareWith(.video(url))
-            
-            previewController.navigationController?.pushViewController(vc, animated: true)
+            let presenting = previewController.presentingViewController
+            previewController.dismiss(animated: true) {
+                presenting?.present(nav, animated: true, completion: nil)
+            }
         }
     }
 }

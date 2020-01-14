@@ -30,6 +30,7 @@
 		91653F3923B12C7200D4BF0F /* ProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91653F3823B12C7200D4BF0F /* ProjectsResponse.swift */; };
 		9167CABE23B2704B00EA9763 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9167CABD23B2704B00EA9763 /* CustomPickerView.xib */; };
 		9167CAC023B270E000EA9763 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167CABF23B270E000EA9763 /* CustomPickerView.swift */; };
+		9172F0DA23CE17790044BD37 /* cowspnk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9172F0D923CE17790044BD37 /* cowspnk.wav */; };
 		9182435323BE2F0200BA97FB /* ProjectDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9182435223BE2F0200BA97FB /* ProjectDetails.swift */; };
 		9182435523BE320200BA97FB /* ReportIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9182435423BE320200BA97FB /* ReportIssueViewModel.swift */; };
 		9182435723BE431100BA97FB /* CreateIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9182435623BE431100BA97FB /* CreateIssueRequest.swift */; };
@@ -144,6 +145,7 @@
 		91653F3823B12C7200D4BF0F /* ProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResponse.swift; sourceTree = "<group>"; };
 		9167CABD23B2704B00EA9763 /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		9167CABF23B270E000EA9763 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
+		9172F0D923CE17790044BD37 /* cowspnk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cowspnk.wav; sourceTree = "<group>"; };
 		9182435223BE2F0200BA97FB /* ProjectDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetails.swift; sourceTree = "<group>"; };
 		9182435423BE320200BA97FB /* ReportIssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueViewModel.swift; sourceTree = "<group>"; };
 		9182435623BE431100BA97FB /* CreateIssueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIssueRequest.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 		91FA874723BF718400D8A2CC /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				9172F0D923CE17790044BD37 /* cowspnk.wav */,
 				91FA874923BF719500D8A2CC /* confetti.png */,
 				91FA874A23BF719600D8A2CC /* diamond.png */,
 				91FA874B23BF719600D8A2CC /* star.png */,
@@ -645,6 +648,7 @@
 				9167CABE23B2704B00EA9763 /* CustomPickerView.xib in Resources */,
 				91FA874E23BF719600D8A2CC /* diamond.png in Resources */,
 				91FA874D23BF719600D8A2CC /* confetti.png in Resources */,
+				9172F0DA23CE17790044BD37 /* cowspnk.wav in Resources */,
 				9131090323B2573B00D794D6 /* PickerRowView.xib in Resources */,
 				91FA874C23BF719600D8A2CC /* triangle.png in Resources */,
 				91FA874323BF6C5B00D8A2CC /* PreviewView.xib in Resources */,

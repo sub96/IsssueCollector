@@ -57,8 +57,8 @@ extension LoginViewController: WKNavigationDelegate {
                     else { return }
                 self?.dismiss(animated: true, completion: {
                     details.removeConfettiView()
+                    DefaultManager().isNotFirstLaunch = true
                 })
-                
 
             case .failure(let error):
                 print(error)

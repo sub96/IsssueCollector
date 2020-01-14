@@ -87,5 +87,6 @@ class PreviewView: UIView, XibConnected {
     @objc func reachTheEndOfTheVideo(_ notification: Notification) {
         player?.pause()
         player?.seek(to: .zero)
+        self.playButton.isSelected = false
     }
 }
