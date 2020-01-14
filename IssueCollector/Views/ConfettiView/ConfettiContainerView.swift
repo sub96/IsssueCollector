@@ -77,7 +77,7 @@ class ConfettiContainerView: UIView, XibConnected {
         confettiView?.alpha = 0
         
         self.confettiContainer.addSubview(self.confettiView!)
-        self.confettiView?.intensity = 0.5
+        self.confettiView?.intensity = 0.85
         
 //        let taha = UIImage.init(named: "taha",
 //                                in: Bundle(for: ConfettiView.self),

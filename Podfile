@@ -6,7 +6,6 @@ target 'IssueCollector' do
     pod 'Nuke'
     pod 'IQKeyboardManagerSwift'
 
-
 end
 
 target 'IssueCollectorExample' do
