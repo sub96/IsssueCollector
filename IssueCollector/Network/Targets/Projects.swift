@@ -18,6 +18,7 @@ enum ProjectTarget: TargetType {
     
     case getProjects
     case getProjectDetails(id: Int)
+	case getProjectFields(id: Int)
     
     case getFields
     case createIssue(request: CreateIssueRequest)
@@ -49,6 +50,8 @@ enum ProjectTarget: TargetType {
              return "project"
          case .getProjectDetails(let id):
              return "project/\(id)"
+		case .getProjectFields:
+			return "issue/createmeta"
          case .createIssue:
              return "issue"
          case .addAttachment(data: _, projectID: let id):
@@ -64,6 +67,7 @@ enum ProjectTarget: TargetType {
         switch self {
         case .getProjects,
              .getProjectDetails,
+			 .getProjectFields,
              .getCurrentUser,
              .getFields:
             return .get
@@ -87,6 +91,11 @@ enum ProjectTarget: TargetType {
              .getFields:
             return .requestPlain
             
+		case .getProjectFields(let id):
+			return .requestParameters(parameters: ["projectIds" : id,
+												   "expand": "projects.issuetypes.fields"],
+									  encoding: URLEncoding.default)
+			
         case .createIssue(let request):
             return .requestJSONEncodable(request)
             

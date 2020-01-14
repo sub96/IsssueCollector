@@ -96,6 +96,20 @@ class JiraProvider {
             }
         }
     }
+	
+	func getProjectFields(with id: Int) {
+		provider.request(.getProjectFields(id: id)) { result in
+			do {
+				let response = try result
+					.get()
+					.filterSuccessfulStatusCodes()
+					.map(FieldsResponse.self)
+				print(response)
+			} catch {
+				print(error)
+			}
+		}
+	}
     
     func createIssue(with request: CreateIssueRequest, onCompletion: @escaping (Result<CreateIssueResponse, Error>) -> Void) {
         provider.request(ProjectTarget.createIssue(request: request)) { result in

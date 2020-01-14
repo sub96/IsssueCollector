@@ -28,7 +28,6 @@ class DetailsViewModel {
                     self.getProjects { projectResponse in
                         switch projectResponse {
                         case .success:
-                            self.jiraProvider.getFields()
                             completion(.success(true))
                             
                         case .failure(let error):

@@ -1,0 +1,6 @@
+module Pods_IssueCollectorExampleiOS12 {
+  umbrella header "Pods-IssueCollectorExampleiOS12-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -18,25 +18,54 @@ public enum Gesture {
 public final class IssueCollector {
     
     public static var shared = IssueCollector()
-    private var isShakeGestureActive = false
+	private var motionManager: CMMotionManager!
     
+	private lazy var xInPositiveDirection = 0.0
+	private lazy var xInNegativeDirection = 0.0
+	private lazy var shakeCount = 0
+	private lazy var tempVariable = 0
+		
     deinit {
         print("Issue collector deinit")
         NotificationCenter.default.removeObserver(self)
     }
     
-    public func startObserving(with gesture: Gesture) {
+	public func startObserving(with gesture: Gesture, app: UIApplicationDelegate) {
         print("start observing..")
+		
         IQKeyboardManager.shared.enable = true
-        
-        switch gesture {
+
+		switch gesture {
         case .screenshot:
             NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification, object: nil, queue: .main) { [weak self] _ in
                 self?.presentFlow()
 
             }
         case .shake:
-            self.isShakeGestureActive = true
+			motionManager = CMMotionManager()
+			motionManager.deviceMotionUpdateInterval = 0.02
+			motionManager.startDeviceMotionUpdates(to: .main) { [weak self] data, error in
+				guard let self = self else { return }
+				if data!.userAcceleration.x > 1.0 {
+					self.xInPositiveDirection = data!.userAcceleration.x
+				 }
+
+				 if data!.userAcceleration.x < -1.0 {
+					self.xInNegativeDirection = data!.userAcceleration.x
+				 }
+
+				if self.xInPositiveDirection != 0.0 && self.xInNegativeDirection != 0.0 {
+					self.shakeCount = self.shakeCount + 1
+					self.xInPositiveDirection = 0.0
+					self.xInNegativeDirection = 0.0
+				 }
+
+				if self.shakeCount > 5 {
+					self.tempVariable = self.tempVariable + 1
+					self.shakeCount = 0
+					self.presentFlow()
+				 }
+			}
         }
     }
     

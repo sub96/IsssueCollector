@@ -13,6 +13,23 @@ class ReportIssueViewModel {
     let jiraProvider = JiraProvider.shared
     var projectDetails: SubrojectDetailsResponse?
     var createIssueRequest = CreateIssueRequest()
+	
+    func getProjectDetails(with id: Int, onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        jiraProvider.getProjectDetails(with: id) { response in
+            switch response {
+            case .success(let projectDetails):
+                self.projectDetails = projectDetails
+                onCompletion(.success(()))
+                
+            case .failure(let error):
+                onCompletion(.failure(error))
+            }
+        }
+    }
+	
+	func getProjectFields(with id: Int) {
+		jiraProvider.getProjectFields(with: id)
+	}
     
     func addProjectID(_ id: Int) {
         self.createIssueRequest.fields.project.id = String(id)
@@ -52,19 +69,6 @@ class ReportIssueViewModel {
                                                            content: [.init(type: "paragraph",
                                                                            content: [.init(text: environment,
                                                                                            type: "text")])])
-    }
-    
-    func getProjectDetails(with id: Int, onCompletion: @escaping (Result<Void, Error>) -> Void) {
-        jiraProvider.getProjectDetails(with: id) { response in
-            switch response {
-            case .success(let projectDetails):
-                self.projectDetails = projectDetails
-                onCompletion(.success(()))
-                
-            case .failure(let error):
-                onCompletion(.failure(error))
-            }
-        }
     }
     
     func createIssue(onCompletion: @escaping (Result<Void, Error>) -> Void) {
