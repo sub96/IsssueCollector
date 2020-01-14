@@ -50,6 +50,15 @@ struct FieldIssuetype: Codable {
     }
 }
 
+extension Project {
+    func asIssueType() -> [PickerElement] {
+        
+        return self.issuetypes.map { (name: $0.name,
+                                      url: $0.iconURL,
+                                      id: Int($0.id)!) }
+    }
+}
+
 // MARK: - Fields
 struct Fields: Codable {
     let summary, issuetype: Assignee

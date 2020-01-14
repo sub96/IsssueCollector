@@ -12,7 +12,7 @@ struct LoginRequest: Codable {
     let grant_type = "authorization_code"
     let client_id = "gUVPhVEvA21QYAREKVyT17ybPcwPqoJv"
     let client_secret = "-6xeTsHcU2S-0-xUaRyizo-AmL0noGiYkRd-2336DTHDF9ejcRp9dBSU_cBZNnpF"
-    let redirect_uri = "https://www.google.com"
+    let redirect_uri = "https://www.d-tt.nl"
     
     let code: String
 }

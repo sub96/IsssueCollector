@@ -12,7 +12,7 @@ class ReportIssueViewModel {
     
     lazy var createIssueRequest = CreateIssueRequest()
     let jiraProvider = JiraProvider.shared
-    var projectDetails: SubrojectDetailsResponse?
+    var issueTypes: [PickerElement]?
     var priorities: Assignee?
     
     struct DefaultData {
@@ -121,7 +121,7 @@ class ReportIssueViewModel {
         jiraProvider.getProjectDetails(with: id) { response in
             switch response {
             case .success(let projectDetails):
-                self.projectDetails = projectDetails
+//                self.projectDetails = projectDetails
                 onCompletion(.success(()))
                 
             case .failure(let error):
@@ -140,6 +140,7 @@ class ReportIssueViewModel {
                 let stepsToReprodce = fields?.customfield10062
                 let priorities = fields?.priority
                 self?.priorities = priorities
+                self?.issueTypes = projectDesc.projects.first?.asIssueType()
                 onCompletion(.success(ProjectFields.init(stepsToReproduce: stepsToReprodce,
                                                          priorities: priorities)))
                 

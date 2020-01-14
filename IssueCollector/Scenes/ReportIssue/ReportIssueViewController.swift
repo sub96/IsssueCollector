@@ -73,6 +73,7 @@ class ReportIssueViewController: UIViewController {
     
     private func checkDefaultSettings() {
         self.stepToReproduceStackView.isHidden = true
+        self.priorityStackView.isHidden = true
 
         viewModel.checkForDefaultSettings { [weak self] response in
             switch response {
@@ -87,6 +88,7 @@ class ReportIssueViewController: UIViewController {
                     self?.issueTypeButton.setTitle(defaultData.issueType ?? "",
                                                    for: .normal)
                     self?.stepToReproduceStackView.isHidden = defaultData.projectFields.stepsToReproduce == nil
+                    self?.priorityStackView.isHidden = defaultData.projectFields.priorities == nil
                 }
                 
             case .failure(let error):
@@ -121,6 +123,7 @@ class ReportIssueViewController: UIViewController {
         self.summaryStackView.isHidden = true
         self.stepToReproduceStackView.isHidden = true
 		self.environmentStackView.isHidden = true
+        self.priorityStackView.isHidden = true
     }
     
     @IBAction func reportIssueButtonPressed(_ sender: Any) {
@@ -147,12 +150,15 @@ class ReportIssueViewController: UIViewController {
             configureWithProjects()
             
         case 1:
+            print("cuc2ufekmrf")
             configureWithIssueType()
             
         case 2:
             configureWithPriorities()
             
-        default: break
+        default:
+            print("cuc2u")
+            break
         }
     }
     
@@ -163,7 +169,7 @@ class ReportIssueViewController: UIViewController {
     }
     
     private func configureWithIssueType() {
-        guard let dataSource = viewModel.projectDetails?.asIssueType() else { return }
+        guard let dataSource = viewModel.issueTypes else { return }
         self.pickerView.configure(with: dataSource, and: 1)
         self.pickerView.isShowingPicker.toggle()
     }

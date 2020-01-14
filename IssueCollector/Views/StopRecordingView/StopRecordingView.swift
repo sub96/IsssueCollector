@@ -81,7 +81,6 @@ extension StopRecordingView {
     
     private func getVideoPath(_ previewController: RPPreviewViewController) {
         PHPhotoLibrary.shared().performChanges({
-             print("cucu")
          }) { [weak self] (saved, error) in
              if saved {
                  let fetchOption = PHFetchOptions()

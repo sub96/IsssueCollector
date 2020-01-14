@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let url = URL.init(string: "https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=gUVPhVEvA21QYAREKVyT17ybPcwPqoJv&scope=read%3Ajira-user%20read%3Ajira-work%20write%3Ajira-work%20offline_access%20read%3Ame&redirect_uri=https%3A%2F%2Fwww.google.com%2F&state=hard&response_type=code&prompt=consent") else { return }
+        guard let url = URL.init(string: "https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=gUVPhVEvA21QYAREKVyT17ybPcwPqoJv&scope=read%3Ajira-user%20read%3Ajira-work%20write%3Ajira-work%20offline_access%20read%3Ame&redirect_uri=https%3A%2F%2Fwww.d-tt.nl&state=hard&response_type=code&prompt=consent") else { return }
         
         webView.load(URLRequest.init(url: url))
         
@@ -43,7 +43,6 @@ class LoginViewController: UIViewController {
 extension LoginViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let url = webView.url,
-            url.absoluteString.lowercased().contains("google"),
             url.queryParameters.first?.name.contains("code") ?? false,
             let code = url.queryParameters.first?.value else { return }
         
