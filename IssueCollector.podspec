@@ -20,6 +20,6 @@ This CocoaPods library helps you report issues to jira with just a screenshot!
   spec.source_files  = "IssueCollector/**/*.{h,m,swift,storyboard,xib,png}"
   spec.dependency 'Moya'
   spec.dependency 'Nuke'
-
+  spec.dependency 'IQKeyboardManagerSwift'
 
 end
