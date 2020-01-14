@@ -97,16 +97,16 @@ class JiraProvider {
         }
     }
 	
-	func getProjectFields(with id: Int) {
+	func getProjectFields(with id: Int, onCompletion: @escaping (Result<FieldsResponse, Error>) -> Void) {
 		provider.request(.getProjectFields(id: id)) { result in
 			do {
 				let response = try result
 					.get()
 					.filterSuccessfulStatusCodes()
 					.map(FieldsResponse.self)
-				print(response)
+                onCompletion(.success(response))
 			} catch {
-				print(error)
+                onCompletion(.failure(error))
 			}
 		}
 	}

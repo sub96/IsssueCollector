@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wQT-Vl-veV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wQT-Vl-veV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L2x-Jt-HtR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdp-ZU-NYT" customClass="PreviewView" customModule="IssueCollector" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="748"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Zci-ZM-3PY">
-                                        <rect key="frame" x="0.0" y="714" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="748" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XCs-Y4-RUp">
                                                 <rect key="frame" x="16" y="8" width="382" height="44"/>
@@ -34,6 +33,9 @@
                                                         <state key="normal" title="Start recording">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="startRecordingButtonPressed:" destination="RtV-Zj-7oT" eventType="touchUpInside" id="ZSM-De-anA"/>
                                                         </connections>
@@ -42,6 +44,9 @@
                                                         <rect key="frame" x="296" y="0.0" width="86" height="44"/>
                                                         <state key="normal" title="Report issue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" red="0.23000000000000001" green="0.23000000000000001" blue="0.23000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <segue destination="OUK-lB-un8" kind="show" id="ja1-uD-v2k"/>
@@ -65,7 +70,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="L2x-Jt-HtR" firstAttribute="trailing" secondItem="qmJ-Gg-1vh" secondAttribute="trailing" id="KnQ-fO-yEY"/>
-                            <constraint firstItem="L2x-Jt-HtR" firstAttribute="bottom" secondItem="qmJ-Gg-1vh" secondAttribute="bottom" id="a8t-iZ-Nnk"/>
+                            <constraint firstItem="L2x-Jt-HtR" firstAttribute="bottom" secondItem="xpZ-hq-OQw" secondAttribute="bottom" id="a8t-iZ-Nnk"/>
                             <constraint firstItem="L2x-Jt-HtR" firstAttribute="leading" secondItem="qmJ-Gg-1vh" secondAttribute="leading" id="phz-8a-qNf"/>
                             <constraint firstItem="L2x-Jt-HtR" firstAttribute="top" secondItem="qmJ-Gg-1vh" secondAttribute="top" id="qb2-vd-YTo"/>
                         </constraints>
@@ -301,7 +306,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="o0n-CK-LdF">
-                                <rect key="frame" x="16" y="104" width="382" height="383"/>
+                                <rect key="frame" x="16" y="104" width="382" height="439.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yuK-b6-Qwq">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="52.5"/>
@@ -407,6 +412,24 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dKR-Pt-deC">
+                                        <rect key="frame" x="0.0" y="387" width="382" height="52.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="387-Yq-v6G">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJt-iB-UcT">
+                                                <rect key="frame" x="0.0" y="22.5" width="382" height="30"/>
+                                                <state key="normal" title="Priority.."/>
+                                                <connections>
+                                                    <action selector="pickerViewButtonPressed:" destination="OUK-lB-un8" eventType="touchUpInside" id="3LU-bT-JeR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e87-cv-nOh">
@@ -443,6 +466,8 @@
                         <outlet property="issueTypeButton" destination="aPj-JK-LnS" id="f2j-nj-mXs"/>
                         <outlet property="issueTypeStackView" destination="Trv-X6-ozu" id="fxG-8W-Gbt"/>
                         <outlet property="pickerView" destination="HyY-N4-J7Y" id="Xd4-AT-HMS"/>
+                        <outlet property="priorityButton" destination="DJt-iB-UcT" id="fNm-hk-MMo"/>
+                        <outlet property="priorityStackView" destination="dKR-Pt-deC" id="aVD-Xx-i4g"/>
                         <outlet property="projectButton" destination="xvm-ou-P1n" id="Pl6-Xd-YxT"/>
                         <outlet property="stepToReproduceStackView" destination="HnY-jh-nN0" id="46G-i9-2lf"/>
                         <outlet property="stepToReproduceTextView" destination="axm-Uz-xVR" id="2nZ-w5-iFz"/>

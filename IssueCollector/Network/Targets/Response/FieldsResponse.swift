@@ -109,12 +109,23 @@ struct Assignee: Codable {
     }
 }
 
+extension Assignee {
+    func asPriorities() -> [PickerElement] {
+        
+        guard let values = self.allowedValues else { return [] }
+        return values.map { (name: $0.name,
+                             url: $0.iconURL ?? URL.init(string: "google.com")!,
+                             id: Int($0.id)!) }
+    }
+}
+
+
 // MARK: - AllowedValue
 struct AllowedValue: Codable {
     let allowedValueSelf: URL
     let id: String
     let allowedValueDescription: String?
-    let iconURL: String?
+    let iconURL: URL?
     let name: String
     let subtask: Bool?
     let avatarID: Int?
