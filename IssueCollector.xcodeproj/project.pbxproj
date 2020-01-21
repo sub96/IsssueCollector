@@ -161,7 +161,7 @@
 		91AAA8C323BE1EC30063BE08 /* ReportIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueViewController.swift; sourceTree = "<group>"; };
 		91B7974023B0E6350038CE25 /* IssueCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssueCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B7974323B0E6350038CE25 /* IssueCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IssueCollector.h; sourceTree = "<group>"; };
-		91B7974423B0E6350038CE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		91B7974423B0E6350038CE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91B7974F23B0E6470038CE25 /* IssueCollectorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueCollectorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B7975123B0E6470038CE25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91B7975323B0E6470038CE25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1008,7 +1008,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IssueCollector/Info.plist;
+				INFOPLIST_FILE = IssueCollector/Asset/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1035,7 +1035,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IssueCollector/Info.plist;
+				INFOPLIST_FILE = IssueCollector/Asset/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
