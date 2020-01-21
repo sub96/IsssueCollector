@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -161,7 +161,7 @@
 		91AAA8C323BE1EC30063BE08 /* ReportIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueViewController.swift; sourceTree = "<group>"; };
 		91B7974023B0E6350038CE25 /* IssueCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssueCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B7974323B0E6350038CE25 /* IssueCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IssueCollector.h; sourceTree = "<group>"; };
-		91B7974423B0E6350038CE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91B7974423B0E6350038CE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		91B7974F23B0E6470038CE25 /* IssueCollectorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueCollectorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B7975123B0E6470038CE25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91B7975323B0E6470038CE25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -430,7 +430,6 @@
 			children = (
 				91FA874723BF718400D8A2CC /* Asset */,
 				91B7974323B0E6350038CE25 /* IssueCollector.h */,
-				91B7974423B0E6350038CE25 /* Info.plist */,
 				91B7976323B0E7FD0038CE25 /* IssueCollector.swift */,
 				9131090123B2572400D794D6 /* Views */,
 				91653F2723B10F3100D4BF0F /* Utils */,
@@ -484,6 +483,7 @@
 		91FA874723BF718400D8A2CC /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				91B7974423B0E6350038CE25 /* Info.plist */,
 				9172F0D923CE17790044BD37 /* cowspnk.wav */,
 				91FA874923BF719500D8A2CC /* confetti.png */,
 				91FA874A23BF719600D8A2CC /* diamond.png */,
@@ -528,7 +528,6 @@
 				7C4DC3AC23CC9C08000C24F5 /* Frameworks */,
 				7C4DC3AD23CC9C08000C24F5 /* Resources */,
 				7C4DC3C723CC9D60000C24F5 /* Embed Frameworks */,
-				4F87A67480955707B42D30B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -549,7 +548,6 @@
 				91B7973C23B0E6350038CE25 /* Sources */,
 				91B7973D23B0E6350038CE25 /* Frameworks */,
 				91B7973E23B0E6350038CE25 /* Resources */,
-				BF5534559E45D6C3F0F97C0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -569,7 +567,6 @@
 				91B7974C23B0E6470038CE25 /* Frameworks */,
 				91B7974D23B0E6470038CE25 /* Resources */,
 				91D3307123B109E60045FD34 /* Embed Frameworks */,
-				7A385A1C6358EC40CE502F1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -668,23 +665,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F87A67480955707B42D30B0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExampleiOS12/Pods-IssueCollectorExampleiOS12-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExampleiOS12/Pods-IssueCollectorExampleiOS12-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExampleiOS12/Pods-IssueCollectorExampleiOS12-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7992E4BB3303F5F56089BC2E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,40 +685,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A385A1C6358EC40CE502F1A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IssueCollectorExample/Pods-IssueCollectorExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF5534559E45D6C3F0F97C0F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IssueCollector/Pods-IssueCollector-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IssueCollector/Pods-IssueCollector-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IssueCollector/Pods-IssueCollector-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7D55042ECB5C2899F6E8E04 /* [CP] Check Pods Manifest.lock */ = {

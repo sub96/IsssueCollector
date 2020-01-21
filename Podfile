@@ -4,7 +4,6 @@ platform :ios, '11.0'
 target 'IssueCollector' do
     pod 'Moya'
     pod 'Nuke'
-    pod 'IQKeyboardManagerSwift'
 
 end
 

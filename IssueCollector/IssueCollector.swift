@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreMotion
-import IQKeyboardManagerSwift
 import AVFoundation
 
 public enum Gesture {
@@ -19,8 +18,8 @@ public enum Gesture {
 public final class IssueCollector {
     
     public static var shared = IssueCollector()
-	private var motionManager: CMMotionManager!
     
+	private lazy var motionManager = CMMotionManager()
 	private lazy var xInPositiveDirection = 0.0
 	private lazy var xInNegativeDirection = 0.0
 	private lazy var shakeCount = 0
@@ -34,8 +33,6 @@ public final class IssueCollector {
     
 	public func startObserving(with gesture: Gesture, app: UIApplicationDelegate) {
         print("start observing..")
-		
-        IQKeyboardManager.shared.enable = true
 
 		switch gesture {
         case .screenshot:
@@ -44,7 +41,6 @@ public final class IssueCollector {
 
             }
         case .shake:
-			motionManager = CMMotionManager()
 			motionManager.deviceMotionUpdateInterval = 0.02
 			motionManager.startDeviceMotionUpdates(to: .main) { [weak self] data, error in
 				guard let self = self else { return }
@@ -62,7 +58,7 @@ public final class IssueCollector {
 					self.xInNegativeDirection = 0.0
 				 }
 
-				if self.shakeCount > 5 {
+				if self.shakeCount > 4 {
 					self.tempVariable = self.tempVariable + 1
 					self.shakeCount = 0
                     self.whipMuuu()

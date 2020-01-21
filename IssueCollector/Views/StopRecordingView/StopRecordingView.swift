@@ -75,7 +75,18 @@ extension StopRecordingView {
         }
 
         if activity.contains("Save") {
-            getVideoPath(previewController)
+            let status = PHPhotoLibrary.authorizationStatus()
+            if status == .authorized {
+                self.getVideoPath(previewController)
+            } else {
+                PHPhotoLibrary.requestAuthorization { status in
+                    if status == .authorized {
+                        self.getVideoPath(previewController)
+                    } else {
+                        print("cucu")
+                    }
+                }
+            }
         }
     }
     

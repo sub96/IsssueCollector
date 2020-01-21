@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: WKNavigationDelegate {
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let url = webView.url,
             url.queryParameters.first?.name.contains("code") ?? false,
