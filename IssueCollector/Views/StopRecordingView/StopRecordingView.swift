@@ -49,8 +49,6 @@ class StopRecordingView: UIView, XibConnected {
                 
                 let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
                 nav.isNavigationBarHidden = true
-                preview.isModalInPresentation = false
-                nav.isModalInPresentation = false
 
                 window?.rootViewController?.present(nav, animated: true, completion: nil)
 
