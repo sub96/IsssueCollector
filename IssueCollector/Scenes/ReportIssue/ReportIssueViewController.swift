@@ -53,9 +53,11 @@ class ReportIssueViewController: UIViewController {
         }
     }
     
-    
+    @IBOutlet weak var scrollView: UIScrollView!
     private let viewModel = ReportIssueViewModel()
-    
+    private var activeField: UITextField?
+    private var activeTextView: UITextView?
+
     private lazy var activityIndicator: UIActivityIndicatorView = {
         if #available(iOS 13, *) {
             return UIActivityIndicatorView.init(style: .medium)
@@ -69,6 +71,11 @@ class ReportIssueViewController: UIViewController {
         self.configureNavigationBar()
         configureTapToDismiss()
         checkDefaultSettings()
+        startKeyboardObserving()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func checkDefaultSettings() {
@@ -238,7 +245,13 @@ extension ReportIssueViewController: CustomPickerControllerDelegate {
 }
 
 extension ReportIssueViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        activeField = textField
+        return true
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
         switch textField {
         case summaryTextField:
             self.viewModel.addSummary(textField.text ?? "")
@@ -255,6 +268,7 @@ extension ReportIssueViewController: UITextFieldDelegate {
 extension ReportIssueViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+        activeTextView = textView
         if textView.textColor == UIColor.lightGray {
             if textView == stepToReproduceTextView {
                 textView.text = "\u{2022} "
@@ -266,6 +280,7 @@ extension ReportIssueViewController: UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        activeTextView = nil
         if textView.text.isEmpty {
             switch textView {
             case descriptionTextView:
@@ -305,5 +320,52 @@ extension ReportIssueViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
 		textView.adjustSize()
+    }
+}
+
+extension ReportIssueViewController {
+    
+    func startKeyboardObserving() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWasShown(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillBeHidden(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    @objc func keyboardWasShown(notification: NSNotification){
+        //Need to calculate keyboard exact size due to Apple suggestions
+        self.scrollView.isScrollEnabled = true
+        let info = notification.userInfo!
+        let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize!.height, right: 0.0)
+
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeField = self.activeField {
+            var point = activeField.frame.origin
+            point.y += activeField.frame.size.height
+            if (!aRect.contains(point)) {
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+
+    @objc func keyboardWillBeHidden(notification: NSNotification){
+        //Once keyboard disappears, restore original positions
+        let info = notification.userInfo!
+        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: -keyboardSize!.height, right: 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+       // self.scrollView.isScrollEnabled = false
     }
 }

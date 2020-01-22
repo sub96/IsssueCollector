@@ -49,6 +49,9 @@ class StopRecordingView: UIView, XibConnected {
                 
                 let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
                 nav.isNavigationBarHidden = true
+                preview.isModalInPresentation = false
+                nav.isModalInPresentation = false
+
                 window?.rootViewController?.present(nav, animated: true, completion: nil)
 
             } else if let error = error {
@@ -79,14 +82,10 @@ extension StopRecordingView {
             if status == .authorized {
                 self.getVideoPath(previewController)
             } else {
-                PHPhotoLibrary.requestAuthorization { status in
-                    if status == .authorized {
-                        self.getVideoPath(previewController)
-                    } else {
-                        print("cucu")
-                    }
-                }
+                previewController.presentFailureAlert(with: "This feaure is not supported for this specific App. Please ask the developer to implement it")
             }
+        } else {
+            previewController.dismiss(animated: true, completion: nil)
         }
     }
     

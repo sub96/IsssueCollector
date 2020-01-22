@@ -429,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				91FA874723BF718400D8A2CC /* Asset */,
+				91B7974423B0E6350038CE25 /* Info.plist */,
 				91B7974323B0E6350038CE25 /* IssueCollector.h */,
 				91B7976323B0E7FD0038CE25 /* IssueCollector.swift */,
 				9131090123B2572400D794D6 /* Views */,
@@ -483,7 +484,6 @@
 		91FA874723BF718400D8A2CC /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				91B7974423B0E6350038CE25 /* Info.plist */,
 				9172F0D923CE17790044BD37 /* cowspnk.wav */,
 				91FA874923BF719500D8A2CC /* confetti.png */,
 				91FA874A23BF719600D8A2CC /* diamond.png */,
@@ -1008,7 +1008,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IssueCollector/Asset/Info.plist;
+				INFOPLIST_FILE = IssueCollector/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1035,7 +1035,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IssueCollector/Asset/Info.plist;
+				INFOPLIST_FILE = IssueCollector/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
