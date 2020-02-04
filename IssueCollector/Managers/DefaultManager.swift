@@ -16,6 +16,7 @@ class DefaultManager {
         
         enum Settings: String {
             case settingsConfigured
+            case appName
         }
         
         enum Project: String {
@@ -69,6 +70,11 @@ class DefaultManager {
             defaults.set(newValue?.url, forKey: DefaultKeys.IssueType.issueTypeImageUrl.rawValue)
             defaults.set(newValue?.id, forKey: DefaultKeys.IssueType.issueTypeId.rawValue)
         }
+    }
+    
+    var appName: String? {
+        get { return defaults.string(forKey: DefaultKeys.Settings.appName.rawValue) }
+        set { defaults.set(newValue, forKey: DefaultKeys.Settings.appName.rawValue) }
     }
     
     let defaults = UserDefaults.standard

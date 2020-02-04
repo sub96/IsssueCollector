@@ -154,26 +154,26 @@ class ReportIssueViewController: UIViewController {
         
         switch button.tag {
         case 0:
-            configureWithProjects()
+            break
+//            configureWithProjects()
             
         case 1:
-            print("cuc2ufekmrf")
-            configureWithIssueType()
+            break
+//            configureWithIssueType()
             
         case 2:
             configureWithPriorities()
             
         default:
-            print("cuc2u")
             break
         }
     }
     
-    private func configureWithProjects() {
-        let dataSource = viewModel.jiraProvider.projects.asProject()
-        self.pickerView.configure(with: dataSource, and: 0)
-        self.pickerView.isShowingPicker.toggle()
-    }
+//    private func configureWithProjects() {
+//        let dataSource = viewModel.jiraProvider.project.asProject()
+//        self.pickerView.configure(with: dataSource, and: 0)
+//        self.pickerView.isShowingPicker.toggle()
+//    }
     
     private func configureWithIssueType() {
         guard let dataSource = viewModel.issueTypes else { return }

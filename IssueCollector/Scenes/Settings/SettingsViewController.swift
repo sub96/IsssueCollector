@@ -27,9 +27,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         pickerView.delegate = self
         configureTapGesture()
-        
-        viewModel.configureProjects()
-        
+                
         viewModel.configureCurrentUser { [weak self] userResponse in
             switch userResponse {
             case .success(let user):
@@ -46,12 +44,41 @@ class SettingsViewController: UIViewController {
             viewModel.selectedProject = settings.project
             
             if let issueType = settings.issueType {
-                issueTypeStack.isHidden = false
                 self.issueTypeButton.setTitle(issueType.name,
                                               for: .normal)
                 viewModel.selectedIssueType = issueType
+            } else {
+                viewModel.getProjectDetails { [weak self] response in
+                    self?.setIssueType()
+                    self?.save()
+                }
             }
         }
+    }
+    
+    @IBAction func pickerViewButtonPressed(_ sender: Any) {
+        guard let button = sender as? UIButton else { return }
+        
+        switch button.tag {
+            // Uncomment for multiproject app
+//        case 0:
+//            configureWithProjects()
+//        case 1:
+//            configureWithIssueType()
+            
+        default: break
+        }
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        save()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func save() {
+        defaultManager.defaultProject = viewModel.selectedProject
+        defaultManager.defaultIssueType = viewModel.selectedIssueType
+        defaultManager.isNotFirstLaunch = true
     }
     
     private func setCurrentUser(_ user: UserResponse) {
@@ -59,6 +86,15 @@ class SettingsViewController: UIViewController {
         self.userEmail.text = user.email
         self.userRole.text = user.extendedProfile.jobTitle
         nuke.loadImage(with: user.picture, into: userImageView)
+    }
+    
+    private func setIssueType() {
+        guard let issueTypes = self.viewModel.projectDetails?.asIssueType(),
+            let bugType = issueTypes.first(where: { $0.name.lowercased().contains("bug") })
+            else { return }
+        
+        self.issueTypeButton.setTitle(bugType.name, for: .normal)
+        viewModel.selectedIssueType = bugType
     }
     
     private func configureTapGesture() {
@@ -70,39 +106,6 @@ class SettingsViewController: UIViewController {
     @objc private func endEditing() {
         !self.pickerView.isShowingPicker ?
             self.pickerView.isShowingPicker.toggle() : ()
-    }
-    
-    func configureWithProjects() {
-        let dataSource = viewModel.projects.asProject()
-        self.pickerView.configure(with: dataSource, and: 0)
-        pickerView.isShowingPicker.toggle()
-    }
-    
-    func configureWithIssueType() {
-        guard let dataSource = viewModel.projectDetails?.asIssueType() else { return }
-        self.pickerView.configure(with: dataSource, and: 1)
-        pickerView.isShowingPicker.toggle()
-    }
-    
-    @IBAction func pickerViewButtonPressed(_ sender: Any) {
-        guard let button = sender as? UIButton else { return }
-        
-        switch button.tag {
-        case 0:
-            configureWithProjects()
-            
-        case 1:
-            configureWithIssueType()
-            
-        default: break
-        }
-    }
-    
-    @IBAction func saveButtonPressed(_ sender: Any) {
-        defaultManager.defaultProject = viewModel.selectedProject
-        defaultManager.defaultIssueType = viewModel.selectedIssueType
-        defaultManager.isNotFirstLaunch = true
-        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -125,10 +128,10 @@ extension SettingsViewController: CustomPickerControllerDelegate {
         }
         
     }
-    
+
     func doneButtonPressed(_ picker: CustomPickerView, tag: Int?) {
         guard let tag = tag else { return }
-
+        
         switch tag {
         case 0:
             self.viewModel.getProjectDetails { response in
@@ -148,5 +151,19 @@ extension SettingsViewController: CustomPickerControllerDelegate {
         }
         endEditing()
     }
-}
+    
+    // Mark:- Multiprojects
+    
+//    func configureWithIssueType() {
+//        guard let dataSource = viewModel.projectDetails?.asIssueType() else { return }
+//        self.pickerView.configure(with: dataSource, and: 1)
+//        pickerView.isShowingPicker.toggle()
+//    }
 
+//    func configureWithProjects() {
+//        let dataSource = viewModel.project.asProject()
+//        self.pickerView.configure(with: dataSource, and: 0)
+//        pickerView.isShowingPicker.toggle()
+//    }
+
+}

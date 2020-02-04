@@ -46,7 +46,6 @@ class DetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController?.isNavigationBarHidden = true
         self.previewView.configure(with: previewType!)
     }
     
@@ -71,8 +70,9 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    func prepareWith(_ previewType: Previewtype) {
+    func prepareWith(_ previewType: Previewtype, enableRecording: Bool) {
         self.previewType = previewType
+        self.buttons.first { $0.tag == 0 }?.isHidden = !enableRecording
     }
 }
 

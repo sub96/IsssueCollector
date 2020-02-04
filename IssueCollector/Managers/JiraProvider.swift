@@ -15,7 +15,7 @@ class JiraProvider {
     }
     
     static var shared = JiraProvider()
-    var projects: SubrojectResponse = []
+//    var project: SubrojectResponseElement?
     var currentUser: UserResponse?
     var capturedFile: Previewtype?
     
@@ -68,14 +68,17 @@ class JiraProvider {
         }
     }
     
-    func getProjects(onCompletion: @escaping (Result<Void, Error>) -> Void) {
-        provider.request(ProjectTarget.getProjects) { result in
+    func getProject(onCompletion: @escaping (Result<Void, Error>) -> Void) {
+        guard let projectKey = DefaultManager().appName else { return }
+        provider.request(ProjectTarget.getProject(key: projectKey)) { result in
             do {
                 let response = try result
                     .get()
                     .filterSuccessfulStatusCodes()
-                    .map(SubrojectResponse.self)
-                self.projects = response
+                    .map(SubrojectResponseElement.self)
+                DefaultManager().defaultProject = (name: response.name,
+                                                   url: response.avatarUrls.the48X48,
+                                                   id: Int(response.id)) as? PickerElement
                 onCompletion(.success(()))
             } catch {
                 onCompletion(.failure(error))

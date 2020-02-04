@@ -21,13 +21,13 @@ class NukeImageLoader {
                                          forHTTPHeaderField: "Authorization")
         
         Nuke.loadImage(with: imageRequest,
-                               options: .init(placeholder: UIImage.init(named: "reload-ic"),
-                                              transition: .fadeIn(duration: 0.2),
-                                              failureImage: UIImage.init(named: "reload-ic"),
-                                              failureImageTransition: .fadeIn(duration: 0.2),
-                                              contentModes: .none),
-                               into: imageView,
-                               progress: nil,
-                               completion: nil)
+                       options: .init(placeholder: UIImage.init(named: "reload-ic"),
+                                      transition: .fadeIn(duration: 0.2),
+                                      failureImage: UIImage.init(named: "reload-ic"),
+                                      failureImageTransition: .fadeIn(duration: 0.2),
+                                      contentModes: .none),
+                       into: imageView,
+                       progress: nil,
+                       completion: nil)
     }
 }

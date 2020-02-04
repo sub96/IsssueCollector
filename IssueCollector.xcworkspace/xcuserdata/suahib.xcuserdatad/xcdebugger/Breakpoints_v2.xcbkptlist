@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "DB153F81-5CD3-4E13-9BAE-51865BEFBF6C"
+   uuid = "E1011A9F-A1EC-448D-B7FA-661687C8DD05"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70FBCE57-E989-4D40-9E64-BC28B68B6869"
+            uuid = "21827BE1-3C40-4866-90FB-15988E7DEE72"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IssueCollector/Views/PickerRowView.swift"
+            filePath = "IssueCollector/Scenes/Details/DetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "configure(projectName:projectImageURL:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "getProject(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AD9DFCBB-442A-495D-AAAA-F183BE04685C"
+            uuid = "C57BAC4A-B2B3-4AA0-B7C6-1D950E2DD59B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IssueCollector/Scenes/ReportIssue/ReportIssueViewModel.swift"
+            filePath = "IssueCollector/Managers/JiraProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "checkForDefaultSettings(onCompletion:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getProject(onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "353912A9-439E-4C8F-938A-9CBF7B0D58F0"
+            uuid = "FC77951A-7F17-418B-8F4A-7325D37FCC0A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IssueCollector/Views/StopRecordingView/StopRecordingView.swift"
+            filePath = "IssueCollector/Managers/JiraProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "handle(_:activityTypes:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "getProject(onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

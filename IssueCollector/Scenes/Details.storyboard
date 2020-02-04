@@ -40,7 +40,7 @@
                                                             <action selector="startRecordingButtonPressed:" destination="RtV-Zj-7oT" eventType="touchUpInside" id="ZSM-De-anA"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmf-nT-Ga6">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmf-nT-Ga6">
                                                         <rect key="frame" x="296" y="0.0" width="86" height="44"/>
                                                         <state key="normal" title="Report issue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +78,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3hW-hx-H4b">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="3jP-GE-zkJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t7B-KU-ETn">
+                            <button key="customView" opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t7B-KU-ETn">
                                 <rect key="frame" x="12" y="0.0" width="382" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mna-GQ-Btu">
-                                <rect key="frame" x="16" y="104" width="382" height="338.5"/>
+                                <rect key="frame" x="16" y="104" width="382" height="393"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FKB-vo-VYQ" userLabel="User Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="276"/>
@@ -216,7 +216,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t7w-VB-aBg" userLabel="Project Stack View">
-                                        <rect key="frame" x="0.0" y="284" width="382" height="54.5"/>
+                                        <rect key="frame" x="0.0" y="284" width="382" height="109"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NqS-UE-TaS" userLabel="Default project Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="54.5"/>
@@ -236,17 +236,17 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gnX-Tc-P9X">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="4"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gnX-Tc-P9X">
+                                                <rect key="frame" x="0.0" y="54.5" width="382" height="54.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your default IssueType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBh-GA-lu8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be2-u1-XKi">
-                                                        <rect key="frame" x="0.0" y="4" width="382" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="24.5" width="382" height="30"/>
                                                         <state key="normal" title="Issue Type.."/>
                                                         <connections>
                                                             <action selector="pickerViewButtonPressed:" destination="onM-Xt-k4T" eventType="touchUpInside" id="eek-Ns-9dI"/>
@@ -443,7 +443,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e87-cv-nOh">
-                                                <rect key="frame" x="291" y="830" width="91" height="30"/>
+                                                <rect key="frame" x="291" y="728" width="91" height="30"/>
                                                 <state key="normal" title="Report Issue!"/>
                                                 <connections>
                                                     <action selector="reportIssueButtonPressed:" destination="OUK-lB-un8" eventType="touchUpInside" id="E3w-YP-GmO"/>

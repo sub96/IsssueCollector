@@ -87,3 +87,11 @@ extension SubrojectResponse {
         })
     }
 }
+
+extension SubrojectResponseElement {
+    func asProject() -> PickerElement {
+        return (name: self.name,
+                url: self.avatarUrls.the48X48,
+                id: Int(self.id)!)
+    }
+}

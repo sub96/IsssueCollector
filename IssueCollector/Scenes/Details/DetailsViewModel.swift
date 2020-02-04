@@ -25,7 +25,7 @@ class DetailsViewModel {
             self.getCurrentUser { userResponse in
                 switch userResponse {
                 case .success:
-                    self.getProjects { projectResponse in
+                    self.getProject { projectResponse in
                         switch projectResponse {
                         case .success:
                             completion(.success(true))
@@ -58,8 +58,8 @@ class DetailsViewModel {
         }
     }
     
-    func getProjects(completion: @escaping (Result<Void, Error>) -> Void) {
-        jiraProvider.getProjects { response in
+    func getProject(completion: @escaping (Result<Void, Error>) -> Void) {
+        jiraProvider.getProject { response in
             switch response {
             case .success:
                 print("Project fetched")

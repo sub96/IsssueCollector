@@ -18,15 +18,15 @@ class SettingsViewModel {
     let jiraProvider = JiraProvider.shared
     
     var currentUser: UserResponse?
-    var projects: SubrojectResponse = []
+    var project: SubrojectResponseElement?
     var projectDetails: SubrojectDetailsResponse?
     
     var selectedProject: PickerElement?
     var selectedIssueType: PickerElement?
     
-    func configureProjects() {
-        self.projects = self.jiraProvider.projects
-    }
+//    func configureProjects() {
+//        self.project = self.jiraProvider.project
+//    }
     
     func configureCurrentUser(onCompletion: @escaping (Result<UserResponse, Error>) -> Void) {
         guard let currentUser = self.jiraProvider.currentUser else {

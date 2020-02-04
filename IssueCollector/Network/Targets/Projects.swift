@@ -17,6 +17,7 @@ enum ProjectTarget: TargetType {
     case getCurrentUser
     
     case getProjects
+    case getProject(key: String)
     case getProjectDetails(id: Int)
 	case getProjectFields(id: Int)
     
@@ -48,6 +49,8 @@ enum ProjectTarget: TargetType {
         switch self {
          case .getProjects:
              return "project"
+        case .getProject(let projectKey):
+            return "project/\(projectKey)"
          case .getProjectDetails(let id):
              return "project/\(id)"
 		case .getProjectFields:
@@ -66,6 +69,7 @@ enum ProjectTarget: TargetType {
     var method: Moya.Method {
         switch self {
         case .getProjects,
+             .getProject,
              .getProjectDetails,
 			 .getProjectFields,
              .getCurrentUser,
@@ -86,6 +90,7 @@ enum ProjectTarget: TargetType {
     var task: Task {
         switch self {
         case .getProjects,
+             .getProject,
              .getProjectDetails,
              .getCurrentUser,
              .getFields:

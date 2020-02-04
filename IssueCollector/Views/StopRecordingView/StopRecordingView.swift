@@ -112,7 +112,7 @@ extension StopRecordingView {
                                              bundle: Bundle.init(for: Self.self))
                 .instantiateInitialViewController() as? UINavigationController,
                 let vc = nav.topViewController as? DetailsViewController else { return }
-            vc.prepareWith(.video(url))
+            vc.prepareWith(.video(url), enableRecording: true)
             let presenting = previewController.presentingViewController
             previewController.dismiss(animated: true) {
                 presenting?.present(nav, animated: true, completion: nil)

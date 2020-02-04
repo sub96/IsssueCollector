@@ -25,16 +25,17 @@ public final class IssueCollector {
 	private lazy var shakeCount = 0
 	private lazy var tempVariable = 0
     private lazy var player = AVAudioPlayer()
+    private var enableRecording: Bool = false
 		
     deinit {
         print("Issue collector deinit")
         NotificationCenter.default.removeObserver(self)
     }
     
-	public func startObserving(with gesture: Gesture, app: UIApplicationDelegate) {
+    public func startObserving(with gesture: Gesture, app: UIApplicationDelegate, enableRecording: Bool, projectKey: String) {
         print("start observing..")
-
-		switch gesture {
+        DefaultManager().appName = projectKey
+        switch gesture {
         case .screenshot:
             NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification, object: nil, queue: .main) { [weak self] _ in
                 self?.presentFlow()
@@ -61,8 +62,8 @@ public final class IssueCollector {
 				if self.shakeCount > 4 {
 					self.tempVariable = self.tempVariable + 1
 					self.shakeCount = 0
-                    self.whipMuuu()
-					self.presentFlow()
+                    self.presentFlow()
+                    //                    self.whipMuuu()
 				 }
 			}
         }
@@ -94,7 +95,7 @@ public final class IssueCollector {
         
         guard let nav = UIStoryboard.init(name: "Details", bundle: Bundle.init(for: Self.self)).instantiateInitialViewController() as? UINavigationController,
             let vc = nav.topViewController as? DetailsViewController else { return }
-        vc.prepareWith(.image(image))
+        vc.prepareWith(.image(image), enableRecording: self.enableRecording)
         
         window.rootViewController?.present(nav, animated: true, completion: nil)
     }
