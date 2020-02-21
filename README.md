@@ -1,5 +1,5 @@
 # IsssueCollector
-The IssueCollector is a tool that make's easy to report issue on Jira!
+The IssueCollector is a tool that make's easy to report issues on Jira!
 ### Installation
 Decalare the IssueCollector in your Podfile
 ``` Swift
@@ -9,6 +9,8 @@ pod 'IssueCollector'
 In AppDelegate.swift, just import IssueCollector framework and call the start observing function.
 
 ``` Swift
+import IssueCollector
+
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   
   IssueCollector.shared.startObserving(with: .shake, 
