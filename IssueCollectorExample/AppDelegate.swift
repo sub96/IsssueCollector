@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        IssueCollector.shared.startObserving(with: .shake, app: self, enableRecording: false, projectKey: "ICIDEV")
+        IssueCollector.shared.startObserving(with: .shake,
+                                             enableRecording: true,
+                                             projectKey: "ICIDEV")
 		
         return true
     }

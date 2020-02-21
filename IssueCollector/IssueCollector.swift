@@ -32,7 +32,7 @@ public final class IssueCollector {
         NotificationCenter.default.removeObserver(self)
     }
     
-    public func startObserving(with gesture: Gesture, app: UIApplicationDelegate, enableRecording: Bool, projectKey: String) {
+    public func startObserving(with gesture: Gesture, enableRecording: Bool, projectKey: String) {
         print("start observing..")
         DefaultManager().appName = projectKey
         switch gesture {

@@ -12,6 +12,7 @@ import Foundation
 class DetailsViewModel {
     let keychain = KeyChain.init()
     let jiraProvider = JiraProvider.shared
+    var isRecordingEnabled = false
     
     /// Decide the start flow
     /// - Parameter completion:

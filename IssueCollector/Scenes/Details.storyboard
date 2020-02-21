@@ -40,7 +40,7 @@
                                                             <action selector="startRecordingButtonPressed:" destination="RtV-Zj-7oT" eventType="touchUpInside" id="ZSM-De-anA"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmf-nT-Ga6">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmf-nT-Ga6">
                                                         <rect key="frame" x="296" y="0.0" width="86" height="44"/>
                                                         <state key="normal" title="Report issue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,27 +77,17 @@
                         <viewLayoutGuide key="safeArea" id="qmJ-Gg-1vh"/>
                     </view>
                     <navigationItem key="navigationItem" id="3hW-hx-H4b">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="3jP-GE-zkJ">
-                            <button key="customView" opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t7B-KU-ETn">
-                                <rect key="frame" x="12" y="0.0" width="382" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="jCq-dR-Sh1"/>
-                                </constraints>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="onM-Xt-k4T" kind="show" identifier="showSettings" id="3i4-Qk-Ox9"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Settings" id="1Lq-6N-xuO">
+                            <connections>
+                                <segue destination="onM-Xt-k4T" kind="show" identifier="showSettings" id="lke-oi-Vzo"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonStackView" destination="XCs-Y4-RUp" id="Jen-N3-0xw"/>
                         <outlet property="previewView" destination="Rdp-ZU-NYT" id="z31-Kp-SlJ"/>
-                        <outletCollection property="buttons" destination="Bmf-nT-Ga6" collectionClass="NSMutableArray" id="f1I-hB-uDi"/>
-                        <outletCollection property="buttons" destination="F8y-gl-JHz" collectionClass="NSMutableArray" id="PQ1-Ph-KOg"/>
-                        <outletCollection property="buttons" destination="t7B-KU-ETn" collectionClass="NSMutableArray" id="NgN-e3-h0E"/>
+                        <outletCollection property="buttons" destination="F8y-gl-JHz" collectionClass="NSMutableArray" id="fHH-DQ-nsj"/>
+                        <outletCollection property="buttons" destination="Bmf-nT-Ga6" collectionClass="NSMutableArray" id="oGC-9t-W7H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCq-iw-Ueq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

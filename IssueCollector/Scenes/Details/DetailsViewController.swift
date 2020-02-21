@@ -12,8 +12,9 @@ import ReplayKit
 class DetailsViewController: UIViewController {
 
 
-    @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet private weak var previewView: PreviewView!
     @IBOutlet private var buttons: [UIButton]!
+    @IBOutlet private weak var buttonStackView: UIStackView!
         
     private var previewType: Previewtype?
     private var confettiContainerView: ConfettiContainerView?
@@ -28,7 +29,7 @@ class DetailsViewController: UIViewController {
                 case .success(let userLoggedIn):
                     if userLoggedIn {
                         self?.viewModel.jiraProvider.capturedFile = self?.previewType
-                        self?.buttons.forEach { $0.isEnabled = true }
+                        self?.configureButtons()
                     } else {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                             self?.showConfettiView()
@@ -47,6 +48,7 @@ class DetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.previewView.configure(with: previewType!)
+        self.setDefaultButtonConfiguration()
     }
     
     @IBAction func startRecordingButtonPressed(_ sender: Any) {
@@ -72,7 +74,22 @@ class DetailsViewController: UIViewController {
     
     func prepareWith(_ previewType: Previewtype, enableRecording: Bool) {
         self.previewType = previewType
-        self.buttons.first { $0.tag == 0 }?.isHidden = !enableRecording
+        self.viewModel.isRecordingEnabled = enableRecording
+    }
+    
+    func configureButtons() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
+        self.buttons.forEach {
+            $0.isHidden = false
+            $0.isEnabled = true
+        }
+    }
+    
+    private func setDefaultButtonConfiguration() {
+        if viewModel.isRecordingEnabled == false {
+            self.buttons.first { $0.tag == 0 }?.removeFromSuperview()
+            self.buttons.first { $0.tag == 1 }?.contentHorizontalAlignment = .trailing
+        }
     }
 }
 
@@ -97,7 +114,7 @@ extension DetailsViewController: ConfettiContainerDelegate {
                 case .success(let userLoggedIn):
                     if userLoggedIn {
                         self?.viewModel.jiraProvider.capturedFile = self?.previewType
-                        self?.buttons.forEach { $0.isEnabled = true }
+                        self?.configureButtons()
                     } else {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                             self?.showConfettiView()
@@ -116,9 +133,4 @@ extension DetailsViewController: ConfettiContainerDelegate {
         let nav = UINavigationController.init(rootViewController: loginVC)
         self.present(nav, animated: true, completion: nil)
     }
-    
-    func goToSettings() {
-        self.performSegue(withIdentifier: "showSettings", sender: nil)
-    }
 }
-
