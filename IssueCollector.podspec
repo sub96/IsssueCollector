@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "IssueCollector"
-  spec.version      = "0.1.6"
+  spec.version      = "0.1.7"
   spec.summary      = "Report Issues to Jira easily"
 
   spec.description  = <<-DESC
