@@ -1,4 +1,4 @@
-# IsssueCollector
+# IssueCollector
 The IssueCollector is a tool that make's easy to report issues on Jira!
 ### Installation
 Decalare the IssueCollector in your Podfile
